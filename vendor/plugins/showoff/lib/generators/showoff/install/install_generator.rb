@@ -13,6 +13,14 @@ module Showoff
 
       end
 
+
+      def create_routes
+        route "match '/mockups', :to => 'mockups#frameset', :as => 'mockups'"
+        route "match '/mockups_index', :to => 'mockups#index', :as => 'mockups_index'"
+        route "match '/mockup/:template_name', :to => 'mockups#show', :as => 'mockup'"
+      end
+
+
     end
   end
 end
