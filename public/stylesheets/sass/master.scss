@@ -46,7 +46,8 @@ $heading-margin: 25px;
 @mixin heading-defaults {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: bold;
-  margin: $heading-margin;
+  margin-top: $heading-margin;
+  margin-bottom: $heading-margin;
 }
 
 h1 {
