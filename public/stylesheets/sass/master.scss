@@ -1,1 +1,50 @@
-@import "utilities/clearfix.scss"
+@import "utilities/clearfix.scss";
+
+
+body {
+  font-family: "Helvetica Neue", Hevetica, Arial, sans-serif;
+  color: #444;
+  font-size: 62.5%;
+  background: #fff;
+}
+
+
+/* links */
+
+a:link, a:visited {
+  color: #369;
+  outline: none;
+  &:hover {
+    color: #39c;
+  }
+}
+
+
+/* page structure
+---------------------------------------------------------------------------- */
+
+.header {
+  @include group;
+}
+
+.nav {
+}
+
+.section {
+  @include group;
+}
+
+.footer {
+}
+
+
+/* misc.
+---------------------------------------------------------------------------- */
+
+hr, .hide {
+  display: none;
+}
+
+a img {
+  border: none;
+}
