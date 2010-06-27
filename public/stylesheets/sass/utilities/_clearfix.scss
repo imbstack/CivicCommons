@@ -1,0 +1,13 @@
+@import "hacks";
+
+@mixin group {
+  &:after {
+    content    : ".";
+    display    : block;
+    height     : 0;
+    clear      : both;
+    visibility : hidden;
+  }
+  @include has-layout
+}
+

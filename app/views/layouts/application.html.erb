@@ -6,7 +6,10 @@
   <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
   <%= javascript_include_tag 'rails' %>
 
-  <%= stylesheet_link_tag :all %>
+  <!--[if gte IE 7]><!-->
+  <link media="screen, projection" rel="stylesheet" href="/stylesheets/screen.css" type="text/css" />
+  <!--<![endif]-->
+
   <%= csrf_meta_tag %>
 
 </head>
