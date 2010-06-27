@@ -1,4 +1,11 @@
 Civiccommons::Application.routes.draw do |map|
+  match '/mockup/:template_name', :to => 'mockups#show', :as => 'mockup'
+
+  match '/mockups_index', :to => 'mockups#index', :as => 'mockups_index'
+
+  match '/mockups', :to => 'mockups#frameset', :as => 'mockups'
+
+
   resources :people
 
   # The priority is based upon order of creation:
