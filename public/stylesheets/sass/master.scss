@@ -38,6 +38,43 @@ a:link, a:visited {
 }
 
 
+/* headings
+---------------------------------------------------------------------------- */
+
+$heading-margin: 25px;
+
+@mixin heading-defaults {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  margin: $heading-margin;
+}
+
+h1 {
+  font-size: 2em;
+  @include heading-defaults;
+}
+
+h2 {
+  font-size: 1.75em;
+  @include heading-defaults;
+}
+
+h3 {
+  font-size: 1.5em;
+  @include heading-defaults;
+}
+
+h4 {
+  font-size: 1.25em;
+  @include heading-defaults;
+}
+
+h5 {
+  font-size: 1em;
+  @include heading-defaults;
+}
+
+
 /* misc.
 ---------------------------------------------------------------------------- */
 
