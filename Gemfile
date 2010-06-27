@@ -5,6 +5,7 @@ gem 'arel',  :git => 'git://github.com/rails/arel.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+gem 'haml'
 
 group :development do
   gem "rails3-generators"
