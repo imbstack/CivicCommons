@@ -7,7 +7,7 @@ body {
   font-family: "Helvetica Neue", Hevetica, Arial, sans-serif;
   color: #444;
   font-size: 62.5%;
-  background: #fff;
+  background: url(/images/header-background.png) repeat-x #fff;
 }
 
 
@@ -26,11 +26,27 @@ a:link, a:visited {
 /* page structure
 ---------------------------------------------------------------------------- */
 
+#logo.header {
+  margin: auto auto;
+  width: 960px;
+  height: 90px;
+}
+
+
+#body.section {
+  background: url(/images/body-gradient.png) repeat-x,
+              url(/images/body-background.png) repeat;
+  width: 100%;
+
+  &>.section {
+    width: 960px;
+    margin: auto auto;
+  }
+}
+
+
 .header {
   @include group;
-  background: url(/images/header-background.png) repeat-x;
-  height: 90px;
-  width: 100%;
 }
 
 .nav {
