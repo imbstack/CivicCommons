@@ -2,15 +2,19 @@
 @import "css3";
 
 $blue-color: #1179b9;
+$light-blue-color: #cbdbe4;
 
 body {
-  font-family: "Helvetica Neue", Hevetica, Arial, sans-serif;
+  font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
   color: #444;
   font-size: 62.5%;
   background: url(/images/header-background.png) repeat-x #fff;
 }
 
 
+p {
+  font-size: 1.2em;
+}
 /* links */
 
 a:link, a:visited {
@@ -45,6 +49,8 @@ a:link, a:visited {
 
   &>.section {
     @include centered-box;
+    margin-top: 27px;
+    margin-bottom: 27px;
   }
 }
 
@@ -58,6 +64,24 @@ a:link, a:visited {
 
 .section {
   @include group;
+}
+
+#footer.footer {
+  width: 100%;
+  height: 132px;
+  background-color: $light-blue-color;
+  border-top: #a2c4d7 solid 1px;
+  border-bottom: #a2c4d7 solid 1px;
+  @include box-shadow(rgba(0, 0, 0, .09), 0px, 5px, 2px);
+}
+
+
+#subfooter.footer {
+  margin-top: 14px;
+  text-align: center;
+  p {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
 }
 
 .footer {
