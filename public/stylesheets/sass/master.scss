@@ -28,6 +28,9 @@ a:link, a:visited {
 
 .header {
   @include group;
+  background: url(/images/header-background.png) repeat-x;
+  height: 90px;
+  width: 100%;
 }
 
 .nav {
