@@ -26,9 +26,14 @@ a:link, a:visited {
 /* page structure
 ---------------------------------------------------------------------------- */
 
-#logo.header {
+@mixin centered-box {
   margin: auto auto;
   width: 960px;
+}
+
+
+#logo.header {
+  @include centered-box;
   height: 90px;
 }
 
@@ -39,8 +44,7 @@ a:link, a:visited {
   width: 100%;
 
   &>.section {
-    width: 960px;
-    margin: auto auto;
+    @include centered-box;
   }
 }
 
