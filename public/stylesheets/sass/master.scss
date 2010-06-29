@@ -1,6 +1,7 @@
 @import "utilities/clearfix";
 @import "css3";
 
+$blue-color: #1179b9;
 
 body {
   font-family: "Helvetica Neue", Hevetica, Arial, sans-serif;
@@ -13,10 +14,11 @@ body {
 /* links */
 
 a:link, a:visited {
-  color: #369;
+  color: $blue-color;
   outline: none;
+  text-decoration: none;
   &:hover {
-    color: #39c;
+    text-decoration: underline;
   }
 }
 
