@@ -1,4 +1,10 @@
 Civiccommons::Application.routes.draw do |map|
+  resources :issues
+
+  resources :conversations
+
+  resources :questions
+
   match '/mockup/:template_name', :to => 'mockups#show', :as => 'mockup'
 
   match '/mockups_index', :to => 'mockups#index', :as => 'mockups_index'

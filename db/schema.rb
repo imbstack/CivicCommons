@@ -10,7 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100626001215) do
+ActiveRecord::Schema.define(:version => 20100630000353) do
+
+  create_table "conversations", :force => true do |t|
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.integer  "issue_id"
+    t.integer  "moderator"
+    t.string   "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "conversations_issues", :id => false, :force => true do |t|
+    t.integer "conversation_id"
+    t.integer "issue_id"
+  end
+
+  create_table "issues", :force => true do |t|
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "people", :force => true do |t|
     t.string   "first_name"
@@ -18,6 +39,16 @@ ActiveRecord::Schema.define(:version => 20100626001215) do
     t.string   "email_address"
     t.boolean  "validated"
     t.boolean  "admin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", :force => true do |t|
+    t.datetime "datetime"
+    t.integer  "owner"
+    t.integer  "askee"
+    t.integer  "issue_id"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
