@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Started at:</b>
+  <%= @conversation.started_at %>
+</p>
+
+<p>
+  <b>Finished at:</b>
+  <%= @conversation.finished_at %>
+</p>
+
+<p>
+  <b>Issue:</b>
+  <%= @conversation.issue %>
+</p>
+
+<p>
+  <b>Moderator:</b>
+  <%= @conversation.moderator %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @conversation.summary %>
+</p>
+
+
+<%= link_to 'Edit', edit_conversation_path(@conversation) %> |
+<%= link_to 'Back', conversations_path %>
