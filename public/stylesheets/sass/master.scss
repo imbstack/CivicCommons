@@ -39,6 +39,21 @@ a:link, a:visited {
 #logo.header {
   @include centered-box;
   height: 90px;
+  padding-top: 3em;
+  line-height: 1.6em;
+
+  a.title {
+    color: white;
+    font-size: 3.2em;
+    @include text-shadow(rgba(0, 0, 0, .57))
+  }
+  span.subtitle {
+    display: block;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.41);
+    text-indent: .4em;
+  }
 }
 
 
