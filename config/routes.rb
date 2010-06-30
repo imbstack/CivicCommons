@@ -1,4 +1,10 @@
 Civiccommons::Application.routes.draw do |map|
+  resources :ratings
+
+  resources :comments
+
+  resources :answers
+
   resources :issues
 
   resources :conversations

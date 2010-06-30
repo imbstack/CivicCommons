@@ -10,7 +10,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100630000353) do
+ActiveRecord::Schema.define(:version => 20100630164125) do
+
+  create_table "answers", :force => true do |t|
+    t.datetime "datetime"
+    t.integer  "owner"
+    t.integer  "question_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.datetime "datetime"
+    t.integer  "owner"
+    t.integer  "parent_type"
+    t.integer  "parent_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "conversations", :force => true do |t|
     t.datetime "started_at"
@@ -49,6 +68,16 @@ ActiveRecord::Schema.define(:version => 20100630000353) do
     t.integer  "askee"
     t.integer  "issue_id"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.datetime "datetime"
+    t.integer  "person_id"
+    t.integer  "parent_type"
+    t.integer  "parent_id"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
