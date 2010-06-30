@@ -1,0 +1,31 @@
+<h1>Listing ratings</h1>
+
+<table>
+  <tr>
+    <th>Datetime</th>
+    <th>Person</th>
+    <th>Parent type</th>
+    <th>Parent</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ratings.each do |rating| %>
+  <tr>
+    <td><%= rating.datetime %></td>
+    <td><%= rating.person_id %></td>
+    <td><%= rating.parent_type %></td>
+    <td><%= rating.parent_id %></td>
+    <td><%= rating.rating %></td>
+    <td><%= link_to 'Show', rating %></td>
+    <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
+    <td><%= link_to 'Destroy', rating, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rating', new_rating_path %>

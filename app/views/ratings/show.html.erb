@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Datetime:</b>
+  <%= @rating.datetime %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= @rating.person_id %>
+</p>
+
+<p>
+  <b>Parent type:</b>
+  <%= @rating.parent_type %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @rating.parent_id %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @rating.rating %>
+</p>
+
+
+<%= link_to 'Edit', edit_rating_path(@rating) %> |
+<%= link_to 'Back', ratings_path %>
