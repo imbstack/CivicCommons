@@ -9,6 +9,7 @@ body {
   color: #444;
   font-size: 62.5%;
   background: url(/images/header-background.png) repeat-x #fff;
+  text-align: center;
 }
 
 
@@ -33,6 +34,7 @@ a:link, a:visited {
 @mixin centered-box {
   margin: auto auto;
   width: 960px;
+  text-align: left;
 }
 
 
@@ -75,6 +77,34 @@ a:link, a:visited {
 }
 
 .nav {
+}
+
+.section.main {
+  @include centered-box;
+  .feature {
+    width: 66%;
+    background-color: purple;
+    float: left;
+  }
+  .aside {
+    float: left;
+    width: 33%;
+    background-color: blue;
+  }
+  .section.conversations {
+    width: 33%;
+    float: left;
+  }
+  .section.activity {
+    width: 33%;
+    background-color: red;
+    float: left;
+  }
+}
+
+.wrapper {
+  padding-right: 10px;
+  background-color: green;
 }
 
 .section {
