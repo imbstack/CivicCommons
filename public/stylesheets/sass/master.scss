@@ -3,9 +3,18 @@
 
 $blue-color: #1179b9;
 $light-blue-color: #cbdbe4;
+$dark-blue-color: #304958;
+$grey-color: #898888;
+
+@mixin heading-font {
+  font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
+}
+
+@mixin paragraph-font {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
 
 body {
-  font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
   color: #444;
   font-size: 62.5%;
   background: url(/images/header-background.png) repeat-x #fff;
@@ -14,7 +23,10 @@ body {
 
 
 p {
-  font-size: 1.2em;
+  font-size: 1.4em;
+  @include paragraph-font;
+  color: $grey-color;
+  font-weight: lighter;
 }
 /* links */
 
@@ -84,8 +96,15 @@ a:link, a:visited {
   @include centered-box;
   .feature {
     width: 66%;
-    background-color: purple;
     float: left;
+    img {
+      @include box-shadow(rgba(0, 0, 0, .75), 2px, 0, 2px);
+      float: left;
+      margin-right: 1em;
+    }
+    p {
+      margin-top: 1.8em;
+    }
   }
   .aside {
     float: left;
@@ -127,7 +146,6 @@ a:link, a:visited {
   margin-top: 14px;
   text-align: center;
   p {
-    font-family: "Helvetica Neue", Arial, sans-serif;
   }
 }
 
@@ -141,15 +159,21 @@ a:link, a:visited {
 $heading-margin: 25px;
 
 @mixin heading-defaults {
-  font-family: Georgia, "Times New Roman", serif;
   font-weight: bold;
   margin-top: $heading-margin;
   margin-bottom: $heading-margin;
 }
 
+h1:first-line {
+  line-height: .7em;
+}
+
 h1 {
-  font-size: 2em;
-  @include heading-defaults;
+  font-size: 2.8em;
+  color: $dark-blue-color;
+  @include text-shadow(rgba($dark-blue-color, .25));
+  @include heading-font;
+  line-height: 1.5em;
 }
 
 h2 {
