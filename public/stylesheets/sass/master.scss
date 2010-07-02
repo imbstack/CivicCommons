@@ -73,6 +73,8 @@ a:link, a:visited {
   margin-bottom: 3em;
 
   a.title {
+    @include heading-font;
+    font-weight: lighter;
     color: white;
     font-size: 3.2em;
     @include text-shadow(rgba(0, 0, 0, .57))
