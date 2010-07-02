@@ -54,7 +54,32 @@ a:link, a:visited {
   }
 }
 
+/* buttons */
 
+a.button:link, .button {
+  display: block;
+  background-color: $blue-color;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: light;
+  @include border-radius(3px);
+  font-family: Helvetica, Arial, sans-serif;
+  @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
+  @include text-shadow(rgba(black, .41));
+}
+
+a.button:hover {
+  text-decoration: none;
+}
+
+.button.primary {
+  width: 153px;
+  height: 18px;
+  padding-top: 8px;
+  background: url(/images/button-gradient.png) repeat-x 0 50%;
+}
 /* page structure
 ---------------------------------------------------------------------------- */
 
@@ -114,10 +139,15 @@ a:link, a:visited {
   .feature {
     width: 66%;
     float: left;
+    .join-conversation {
+      float: left;
+    }
     img {
       @include box-shadow(rgba(0, 0, 0, .75), 2px, 0, 2px);
-      float: left;
       margin-right: 1em;
+    }
+    .button {
+      margin-top: .8em;
     }
     h1 {
       margin-left: 160px;
