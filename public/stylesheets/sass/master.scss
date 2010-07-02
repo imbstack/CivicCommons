@@ -27,11 +27,26 @@ p {
   @include paragraph-font;
   color: $grey-color;
   font-weight: lighter;
+  line-height: 1.4em;
+}
+
+strong {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $grey-color;
+  font-size: 1.2em;
+}
+
+ul {
+  @include paragraph-font;
+  color: black;
 }
 /* links */
 
 a:link, a:visited {
   color: $blue-color;
+  font-size: 1.4em;
+  font-weight: bold;
   outline: none;
   text-decoration: none;
   &:hover {
@@ -102,8 +117,29 @@ a:link, a:visited {
       float: left;
       margin-right: 1em;
     }
+    h1 {
+      margin-left: 160px;
+    }
     p {
       margin-top: .7em;
+      margin-left: 160px;
+    }
+    ul {
+      margin-top: 1.5em;
+      margin-left: 160px;
+      li {
+        margin-bottom: 1em;
+        strong {
+          display: inline-block;
+          width: 150px;
+          text-align: right;
+          margin-right: .6em;
+        }
+        em {
+          font-size: 1.4em;
+          font-weight: bold;
+        }
+      }
     }
   }
   .aside {
