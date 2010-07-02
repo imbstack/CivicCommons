@@ -43,6 +43,7 @@ a:link, a:visited {
   height: 60px;
   padding-top: 3em;
   line-height: 1.6em;
+  margin-bottom: 3em;
 
   a.title {
     color: white;
@@ -118,6 +119,7 @@ a:link, a:visited {
   border-top: #a2c4d7 solid 1px;
   border-bottom: #a2c4d7 solid 1px;
   @include box-shadow(rgba(0, 0, 0, .09), 0px, 5px, 2px);
+  margin-top: 4.8em;
 }
 
 
