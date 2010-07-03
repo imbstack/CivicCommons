@@ -14,6 +14,11 @@ $grey-color: #898888;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+@mixin strong-font {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
 body {
   color: #444;
   font-size: 62.5%;
@@ -31,6 +36,7 @@ p {
 }
 
 strong {
+  @include strong-font;
   text-transform: uppercase;
   font-weight: bold;
   color: $grey-color;
@@ -51,6 +57,11 @@ a:link, a:visited {
   text-decoration: none;
   &:hover {
     text-decoration: underline;
+  }
+  strong {
+    text-transform: none;
+    color: $blue-color;
+    font-size: 1em;
   }
 }
 
@@ -167,6 +178,18 @@ a.button:hover {
           font-size: 1.4em;
           font-weight: bold;
         }
+      }
+    }
+    .conversation-ticker {
+      background-color: white;
+      width: 593px;
+      padding: 16px;
+      border: rgba(black, .15) solid 1px;
+      border-left: 0;
+      border-right: 0;
+      margin-top: 32px;
+      strong {
+        margin-right: 10px;
       }
     }
   }
