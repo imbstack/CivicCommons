@@ -68,7 +68,7 @@ a:link, a:visited {
 /* buttons */
 
 a.button:link, .button {
-  display: block;
+  display: inline-block;
   height: 18px;
   padding-top: 8px;
   background: url(/images/button-gradient.png) repeat-x 0 50%;
@@ -222,8 +222,6 @@ a.button.text:link, .button.text {
     float: left;
     .article {
       margin-top: 30px;
-    }
-    .article {
       img {
         @include box-shadow(rgba(black, .75));
         float: left;
@@ -240,7 +238,6 @@ a.button.text:link, .button.text {
         }
       }
       a.button:link {
-        float: left;
         margin-right: 10px;
       }
     }
