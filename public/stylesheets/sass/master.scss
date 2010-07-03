@@ -69,6 +69,9 @@ a:link, a:visited {
 
 a.button:link, .button {
   display: block;
+  height: 18px;
+  padding-top: 8px;
+  background: url(/images/button-gradient.png) repeat-x 0 50%;
   background-color: $blue-color;
   text-align: center;
   color: white;
@@ -87,9 +90,25 @@ a.button:hover {
 
 .button.primary {
   width: 153px;
-  height: 18px;
-  padding-top: 8px;
-  background: url(/images/button-gradient.png) repeat-x 0 50%;
+}
+
+.button.secondary {
+  width: 80px;
+}
+
+a.button.text:link, .button.text {
+  display: inline;
+  background: inherit;
+  @include paragraph-font;
+  color: $grey-color;
+  text-transform: none;
+  font-weight: normal;
+  -webkit-text-shadow: inherit;
+  -moz-text-shadow: inherit;
+  text-shadow: inherit;
+  @include border-radius(inherit);
+  @include box-shadow(black, 0, 0, 0);
+  text-decoration: underline;
 }
 /* page structure
 ---------------------------------------------------------------------------- */
@@ -201,17 +220,42 @@ a.button:hover {
   .section.conversations {
     width: 33%;
     float: left;
+    .article {
+      margin-top: 30px;
+    }
+    .article {
+      img {
+        @include box-shadow(rgba(black, .75));
+        float: left;
+      }
+      .content {
+        padding-left: 80px;
+      }
+      p {
+        font-size: 1.2em;
+        line-height: 1.6em;
+        margin-bottom: 20px;
+        a strong {
+          font-size: .9em;
+        }
+      }
+      a.button:link {
+        float: left;
+        margin-right: 10px;
+      }
+    }
   }
   .section.activity {
     width: 33%;
-    background-color: red;
     float: left;
   }
 }
 
+#engaging-content {
+  margin-top: 28px;
+}
 .wrapper {
   padding-right: 10px;
-  background-color: green;
 }
 
 .section {
@@ -250,10 +294,6 @@ $heading-margin: 25px;
   margin-bottom: $heading-margin;
 }
 
-h1:first-line {
-  line-height: .7em;
-}
-
 h1 {
   font-size: 2.8em;
   color: $dark-blue-color;
@@ -263,8 +303,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75em;
-  @include heading-defaults;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: rgba($dark-blue-color, .68);
+  @include heading-font;
+  @include text-shadow(rgba(white, 1));
 }
 
 h3 {
