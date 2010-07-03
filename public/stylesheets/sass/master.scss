@@ -92,7 +92,7 @@ a.button:hover {
 
 #logo.header {
   @include centered-box;
-  height: 60px;
+  height: 30px;
   padding-top: 3em;
   line-height: 1.6em;
   margin-bottom: 3em;
@@ -118,12 +118,8 @@ a.button:hover {
   background: url(/images/body-gradient.png) repeat-x,
               url(/images/body-background.png) repeat;
   width: 100%;
-
-  &>.section {
-    @include centered-box;
-    margin-top: 27px;
-    margin-bottom: 27px;
-  }
+  padding-top: 27px;
+  padding-bottom: 27px;
 }
 
 
@@ -206,7 +202,6 @@ a.button:hover {
   border-top: #a2c4d7 solid 1px;
   border-bottom: #a2c4d7 solid 1px;
   @include box-shadow(rgba(0, 0, 0, .09), 0px, 5px, 2px);
-  margin-top: 4.8em;
 }
 
 
