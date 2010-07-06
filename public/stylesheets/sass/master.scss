@@ -219,7 +219,7 @@ a.button.text:link, .button.text {
     float: left;
     width: 33%;
   }
-  .section.activity, .section.conversations {
+  .section.activity, .section.conversations, .aside {
     width: 33%;
     float: left;
     .article {
@@ -241,6 +241,11 @@ a.button.text:link, .button.text {
       }
       a.button:link {
         margin-right: 10px;
+      }
+      ul {
+        line-height: 1.7em;
+        background: url(/images/event-icon.png) no-repeat;
+        padding-left: 40px;
       }
     }
   }
