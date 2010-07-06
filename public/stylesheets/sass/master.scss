@@ -243,10 +243,19 @@ a.button.text:link, .button.text {
         margin-right: 10px;
       }
       ul {
-        line-height: 1.7em;
         background: url(/images/event-icon.png) no-repeat;
         padding-left: 40px;
       }
+    }
+    ul {
+      line-height: 1.7em;
+    }
+  }
+  .aside.issues-people {
+    strong {
+      display: block;
+    }
+    ul {
     }
   }
   .section.activity {
