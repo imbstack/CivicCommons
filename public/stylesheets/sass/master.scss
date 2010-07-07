@@ -3,42 +3,144 @@
 
 $blue-color: #1179b9;
 $light-blue-color: #cbdbe4;
+$dark-blue-color: #304958;
+$grey-color: #898888;
+
+@mixin heading-font {
+  font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
+}
+
+@mixin paragraph-font {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+@mixin strong-font {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 
 body {
-  font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
   color: #444;
   font-size: 62.5%;
   background: url(/images/header-background.png) repeat-x #fff;
+  text-align: center;
 }
 
 
 p {
+  font-size: 1.4em;
+  @include paragraph-font;
+  color: $grey-color;
+  font-weight: lighter;
+  line-height: 1.4em;
+}
+
+strong {
+  @include strong-font;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $grey-color;
   font-size: 1.2em;
+}
+
+ul {
+  @include paragraph-font;
+  color: black;
 }
 /* links */
 
 a:link, a:visited {
   color: $blue-color;
+  font-size: 1.4em;
+  font-weight: bold;
   outline: none;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
+  strong {
+    text-transform: none;
+    color: $blue-color;
+    font-size: 1em;
+  }
 }
 
+/* buttons */
 
+a.button:link, .button {
+  display: inline-block;
+  height: 18px;
+  padding-top: 8px;
+  background: url(/images/button-gradient.png) repeat-x 0 50%;
+  background-color: $blue-color;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: light;
+  @include border-radius(3px);
+  font-family: Helvetica, Arial, sans-serif;
+  @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
+  @include text-shadow(rgba(black, .41));
+}
+
+a.button:hover {
+  text-decoration: none;
+}
+
+.button.primary {
+  width: 153px;
+}
+
+.button.secondary {
+  width: 80px;
+}
+
+a.button.text:link, .button.text {
+  display: inline;
+  background: inherit;
+  @include paragraph-font;
+  color: $grey-color;
+  text-transform: none;
+  font-weight: normal;
+  -webkit-text-shadow: inherit;
+  -moz-text-shadow: inherit;
+  text-shadow: inherit;
+  @include border-radius(inherit);
+  @include box-shadow(black, 0, 0, 0);
+  text-decoration: underline;
+}
 /* page structure
 ---------------------------------------------------------------------------- */
 
 @mixin centered-box {
   margin: auto auto;
   width: 960px;
+  text-align: left;
 }
 
 
 #logo.header {
   @include centered-box;
-  height: 90px;
+  height: 30px;
+  padding-top: 3em;
+  line-height: 1.6em;
+  margin-bottom: 3em;
+
+  a.title {
+    @include heading-font;
+    font-weight: lighter;
+    color: white;
+    font-size: 3.2em;
+    @include text-shadow(rgba(0, 0, 0, .57))
+  }
+  span.subtitle {
+    display: block;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.41);
+    text-indent: .4em;
+  }
 }
 
 
@@ -46,12 +148,8 @@ a:link, a:visited {
   background: url(/images/body-gradient.png) repeat-x,
               url(/images/body-background.png) repeat;
   width: 100%;
-
-  &>.section {
-    @include centered-box;
-    margin-top: 27px;
-    margin-bottom: 27px;
-  }
+  padding-top: 27px;
+  padding-bottom: 27px;
 }
 
 
@@ -60,6 +158,103 @@ a:link, a:visited {
 }
 
 .nav {
+}
+
+.section.main {
+  @include centered-box;
+  .feature {
+    width: 66%;
+    float: left;
+    .join-conversation {
+      float: left;
+    }
+    img {
+      @include box-shadow(rgba(0, 0, 0, .75), 2px, 0, 2px);
+      margin-right: 1em;
+    }
+    .button {
+      margin-top: .8em;
+    }
+    h1 {
+      margin-left: 160px;
+    }
+    p {
+      margin-top: .7em;
+      margin-left: 160px;
+    }
+    a.primary.button {
+      display: block;
+    }
+    ul {
+      margin-top: 1.5em;
+      margin-left: 160px;
+      li {
+        margin-bottom: 1em;
+        strong {
+          display: inline-block;
+          width: 150px;
+          text-align: right;
+          margin-right: .6em;
+        }
+        em {
+          font-size: 1.4em;
+          font-weight: bold;
+        }
+      }
+    }
+    .conversation-ticker {
+      background-color: white;
+      width: 593px;
+      padding: 16px;
+      border: rgba(black, .15) solid 1px;
+      border-left: 0;
+      border-right: 0;
+      margin-top: 32px;
+      strong {
+        margin-right: 10px;
+      }
+    }
+  }
+  .aside {
+    float: left;
+    width: 33%;
+  }
+  .section.activity, .section.conversations {
+    width: 33%;
+    float: left;
+    .article {
+      margin-top: 30px;
+      img {
+        @include box-shadow(rgba(black, .75));
+        float: left;
+      }
+      .content {
+        padding-left: 80px;
+      }
+      p {
+        font-size: 1.2em;
+        line-height: 1.6em;
+        margin-bottom: 20px;
+        a strong {
+          font-size: .9em;
+        }
+      }
+      a.button:link {
+        margin-right: 10px;
+      }
+    }
+  }
+  .section.activity {
+    width: 33%;
+    float: left;
+  }
+}
+
+#engaging-content {
+  margin-top: 28px;
+}
+.wrapper {
+  padding-right: 10px;
 }
 
 .section {
@@ -80,7 +275,6 @@ a:link, a:visited {
   margin-top: 14px;
   text-align: center;
   p {
-    font-family: "Helvetica Neue", Arial, sans-serif;
   }
 }
 
@@ -94,20 +288,25 @@ a:link, a:visited {
 $heading-margin: 25px;
 
 @mixin heading-defaults {
-  font-family: Georgia, "Times New Roman", serif;
   font-weight: bold;
   margin-top: $heading-margin;
   margin-bottom: $heading-margin;
 }
 
 h1 {
-  font-size: 2em;
-  @include heading-defaults;
+  font-size: 2.8em;
+  color: $dark-blue-color;
+  @include text-shadow(rgba($dark-blue-color, .25));
+  @include heading-font;
+  line-height: 1.5em;
 }
 
 h2 {
-  font-size: 1.75em;
-  @include heading-defaults;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: rgba($dark-blue-color, .68);
+  @include heading-font;
+  @include text-shadow(rgba(white, 1));
 }
 
 h3 {
