@@ -19,6 +19,13 @@ $grey-color: #898888;
   font-family: Helvetica, Arial, sans-serif;
 }
 
+/* Animations */
+
+@mixin easing {
+  -webkit-transition: all 0.2s ease;
+}
+
+/* base styles */
 
 body {
   color: #444;
@@ -83,6 +90,7 @@ a.button:link, a.button:visited, .button {
   font-family: Helvetica, Arial, sans-serif;
   @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
   @include text-shadow(rgba(black, .41));
+  @include easing;
 }
 
 a.button:hover {
