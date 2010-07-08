@@ -107,7 +107,7 @@ a.button:hover {
   width: 80px;
 }
 
-a.button.text:link, .button.text {
+a.button.text:link, a.button.text:visited, .button.text {
   display: inline;
   background: inherit;
   @include paragraph-font;
