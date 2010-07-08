@@ -310,10 +310,12 @@ a.button.text:link, a.button.text:visited, .button.text {
 }
 
 
-#subfooter.footer {
+#legal.footer {
+  font-size:0.9em;
   margin-top: 14px;
   text-align: center;
   p {
+    margin-bottom:1em;
   }
 }
 
