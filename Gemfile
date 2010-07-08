@@ -16,5 +16,5 @@ group :test do
   gem "factory_girl_rails"
 end
 
-gem 'devise'
+gem 'devise', '1.1.rc2'
 
