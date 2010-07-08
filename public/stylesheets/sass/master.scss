@@ -322,7 +322,7 @@ h1 {
   color: $dark-blue-color;
   @include text-shadow(rgba($dark-blue-color, .25));
   @include heading-font;
-  line-height: 1.5em;
+  line-height: 1.2em;
 }
 
 h2 {
