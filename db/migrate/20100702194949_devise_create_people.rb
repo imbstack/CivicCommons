@@ -1,6 +1,6 @@
 class DeviseCreatePeople < ActiveRecord::Migration
   def self.up
-    create_table(:people) do |t|
+    change_table(:people) do |t|
       t.database_authenticatable :null => false
       t.recoverable
       t.rememberable
@@ -10,8 +10,10 @@ class DeviseCreatePeople < ActiveRecord::Migration
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
       # t.token_authenticatable
 
-      t.timestamps
+      #t.timestamps <--- already there from previous migration
     end
+
+    rename_column :people, :email_address, :email
 
     add_index :people, :email,                :unique => true
     add_index :people, :reset_password_token, :unique => true
@@ -20,6 +22,8 @@ class DeviseCreatePeople < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :people
+    change_table(:people) do |t|
+      # how to reverse these changes?
+    end
   end
 end
