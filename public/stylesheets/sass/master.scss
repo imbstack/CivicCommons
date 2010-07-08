@@ -251,11 +251,21 @@ a.button.text:link, .button.text {
       line-height: 1.7em;
     }
   }
-  .aside.issues-people {
+  .aside.supplementary {
     strong {
       display: block;
+      float:left;
+      text-align:right;
+      width:70px;
+      padding-top:0.3em;
     }
     ul {
+      padding-left:80px;
+      margin-bottom:2em;
+    }
+    ul li
+    {
+      margin-bottom:0.2em;
     }
   }
   .section.activity {
