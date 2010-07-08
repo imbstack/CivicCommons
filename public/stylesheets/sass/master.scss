@@ -200,7 +200,7 @@ a.button.text:link, a.button.text:visited, .button.text {
       margin-top: 1.5em;
       margin-left: 160px;
       li {
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
         strong {
           display: inline-block;
           width: 150px;
@@ -234,7 +234,7 @@ a.button.text:link, a.button.text:visited, .button.text {
     width: 33%;
     float: left;
     .article {
-      margin-top: 30px;
+      margin-top: 2em;
       img {
         @include box-shadow(rgba(black, .75));
         float: left;
