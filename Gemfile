@@ -9,6 +9,8 @@ gem 'haml'
 
 group :development do
   gem "rails3-generators"
+  gem "hpricot"
+  gem "ruby_parser"
 end
 
 group :test do
