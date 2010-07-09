@@ -19,6 +19,11 @@ $grey-color: #666;
   font-family: Helvetica, Arial, sans-serif;
 }
 
+@mixin two-thirds {
+  width: 66%;
+  float: left;
+}
+
 /* Animations */
 
 @mixin easing {
@@ -155,6 +160,19 @@ a.button.text:link, a.button.text:visited, .button.text {
 }
 
 
+// Conversation page
+
+.main.section.conversation {
+  .conversation-head {
+    @include two-thirds;
+    p {
+      margin-top: 18px;
+      width: 490px;
+    }
+  } 
+}
+
+
 #body.section {
   background: url(/images/body-gradient.png) repeat-x,
               url(/images/body-background.png) repeat;
@@ -174,8 +192,7 @@ a.button.text:link, a.button.text:visited, .button.text {
 .section.main {
   @include centered-box;
   .feature {
-    width: 66%;
-    float: left;
+    @include two-thirds;
     .join-conversation {
       float: left;
     }
