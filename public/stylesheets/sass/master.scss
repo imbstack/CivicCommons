@@ -312,10 +312,11 @@ a.button.text:link, a.button.text:visited, .button.text {
 
 #legal.footer {
   font-size:0.9em;
-  margin-top: 14px;
+  padding-top: 14px;
   text-align: center;
+  background: url(/images/body-background.png) repeat-x;
   p {
-    margin-bottom:1em;
+    padding-bottom:1em;
   }
 }
 
