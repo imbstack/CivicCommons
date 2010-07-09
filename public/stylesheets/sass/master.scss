@@ -24,6 +24,10 @@ $grey-color: #666;
   float: left;
 }
 
+
+@mixin gutter-margin {
+  margin-right: 10px;
+}
 /* Animations */
 
 @mixin easing {
@@ -168,6 +172,24 @@ a.button.text:link, a.button.text:visited, .button.text {
     p {
       margin-top: 18px;
       width: 490px;
+      margin-bottom: 35px;
+    }
+    select {
+      float: left;
+      @include gutter-margin;
+    }
+    textarea {
+      width: 535px;
+      height: 60px;
+      color: $grey-color;
+      @include strong-font;
+      font-size: 1.4em;
+      @include border-radius(3px);
+      border-color: rgba(black, .07);
+      @include box-shadow(rgba(black, .26), 1px);
+      background: white url(/images/stream-entry-gradient.png) repeat-x;
+      padding-left: 7px;
+      padding-top: 7px;
     }
   } 
 }
@@ -239,7 +261,7 @@ a.button.text:link, a.button.text:visited, .button.text {
       border-right: 0;
       margin-top: 32px;
       strong {
-        margin-right: 10px;
+        @include gutter-margin;
       }
     }
   }
@@ -268,7 +290,7 @@ a.button.text:link, a.button.text:visited, .button.text {
         }
       }
       a.button:link {
-        margin-right: 10px;
+        @include gutter-margin;
       }
       ul {
         background: url(/images/event-icon.png) no-repeat;
