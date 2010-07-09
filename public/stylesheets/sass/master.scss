@@ -100,6 +100,12 @@ a.button:link, a.button:visited, .button {
   @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
   @include text-shadow(rgba(black, .41));
   @include easing;
+  &.tertiary {
+    width: 70px;
+    height: 16px;
+    padding-top: 4px;
+    text-transform: inherit;
+  }
 }
 
 a.button:hover {
@@ -190,6 +196,10 @@ a.button.text:link, a.button.text:visited, .button.text {
       background: white url(/images/stream-entry-gradient.png) repeat-x;
       padding-left: 7px;
       padding-top: 7px;
+    }
+    a.button {
+      margin-left: 80px;
+      margin-top: 8px;
     }
   } 
 }
