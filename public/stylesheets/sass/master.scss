@@ -187,73 +187,6 @@ a.privileged {
 }
 
 
-// Conversation page
-
-.main.section.conversation {
-  .conversation-head {
-    @include two-thirds;
-    @include gutter-margin;
-    p {
-      margin-top: 18px;
-      width: 490px;
-      margin-bottom: 35px;
-    }
-    select {
-      float: left;
-      @include gutter-margin;
-    }
-    textarea {
-      width: 535px;
-      height: 60px;
-      color: $grey-color;
-      @include strong-font;
-      font-size: 1.4em;
-      @include border-radius(3px);
-      border-color: rgba(black, .07);
-      @include box-shadow(rgba(black, .26), 1px);
-      background: white url(/images/stream-entry-gradient.png) repeat-x;
-      padding-left: 7px;
-      padding-top: 7px;
-    }
-    a.button {
-      margin-left: 80px;
-      margin-top: 8px;
-      margin-bottom: 15px;
-    }
-    hr {
-      display: block;
-      border: 0;
-      border-top: solid 1px rgba(black, .19);
-    }
-  } 
-  .aside.supplementary {
-    .aside {
-      width: 100%;
-      float: none;
-      strong {
-        float: none;
-        text-align: left;
-        border-bottom: #cdcdcd thin solid;
-        width: 100%;
-               padding-bottom: 3px;
-        margin-bottom: 15px;
-      }
-      strong:after {
-        content: ":";
-      }
-      ul {
-        padding-left: 0;
-        margin-bottom: 10px;
-      }
-    }
-    .guides {
-      margin-bottom: 30px;
-    }
-  }
-
-}
-
-
 #body.section {
   background: url(/images/body-gradient.png) repeat-x,
               url(/images/body-background.png) repeat;
@@ -377,6 +310,66 @@ a.privileged {
   .section.activity {
     width: 33%;
     float: left;
+  }
+  .conversation-head {
+    @include two-thirds;
+    @include gutter-margin;
+    p {
+      margin-top: 18px;
+      width: 490px;
+      margin-bottom: 35px;
+    }
+    select {
+      float: left;
+      @include gutter-margin;
+    }
+    textarea {
+      width: 535px;
+      height: 60px;
+      color: $grey-color;
+      @include strong-font;
+      font-size: 1.4em;
+      @include border-radius(3px);
+      border-color: rgba(black, .07);
+      @include box-shadow(rgba(black, .26), 1px);
+      background: white url(/images/stream-entry-gradient.png) repeat-x;
+      padding-left: 7px;
+      padding-top: 7px;
+    }
+    a.button {
+      margin-left: 80px;
+      margin-top: 8px;
+      margin-bottom: 15px;
+    }
+    hr {
+      display: block;
+      border: 0;
+      border-top: solid 1px rgba(black, .19);
+    }
+  } 
+  .aside.supplementary {
+    .aside {
+      width: 100%;
+      float: none;
+      strong {
+        float: none;
+        text-align: left;
+        border-bottom: #cdcdcd thin solid;
+        width: 100%;
+               padding-bottom: 3px;
+        margin-bottom: 15px;
+      }
+      strong:after {
+        content: ":";
+      }
+      ul {
+        padding-left: 0;
+        margin-bottom: 10px;
+      }
+    }
+    .guides {
+      margin-bottom: 30px;
+    }
   }
 }
 
