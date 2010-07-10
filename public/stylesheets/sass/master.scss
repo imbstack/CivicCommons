@@ -200,6 +200,12 @@ a.button.text:link, a.button.text:visited, .button.text {
     a.button {
       margin-left: 80px;
       margin-top: 8px;
+      margin-bottom: 15px;
+    }
+    hr {
+      display: block;
+      border: 0;
+      border-top: solid 1px rgba(black, .19);
     }
   } 
 }
