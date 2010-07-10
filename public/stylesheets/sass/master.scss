@@ -6,6 +6,7 @@ $light-blue-color: #cbdbe4;
 $dark-blue-color: #304958;
 $active-blue-color: #1398ea;
 $grey-color: #666;
+$orange-color: #b06c00;
 
 @mixin heading-font {
   font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
@@ -136,6 +137,17 @@ a.button.text:link, a.button.text:visited, .button.text {
   @include box-shadow(black, 0, 0, 0);
   text-decoration: underline;
 }
+
+a:link, a:hover, a:visited, a:active {
+  @include paragraph-font;
+}
+
+a.privileged {
+  color: $orange-color;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
 /* page structure
 ---------------------------------------------------------------------------- */
 
@@ -175,6 +187,7 @@ a.button.text:link, a.button.text:visited, .button.text {
 .main.section.conversation {
   .conversation-head {
     @include two-thirds;
+    @include gutter-margin;
     p {
       margin-top: 18px;
       width: 490px;
@@ -208,6 +221,31 @@ a.button.text:link, a.button.text:visited, .button.text {
       border-top: solid 1px rgba(black, .19);
     }
   } 
+  .aside.supplementary {
+    .aside {
+      width: 100%;
+      float: none;
+      strong {
+        float: none;
+        text-align: left;
+        border-bottom: #cdcdcd thin solid;
+        width: 100%;
+               padding-bottom: 3px;
+        margin-bottom: 15px;
+      }
+      strong:after {
+        content: ":";
+      }
+      ul {
+        padding-left: 0;
+        margin-bottom: 10px;
+      }
+    }
+    .guides {
+      margin-bottom: 30px;
+    }
+  }
+
 }
 
 
@@ -281,10 +319,6 @@ a.button.text:link, a.button.text:visited, .button.text {
       }
     }
   }
-  .aside {
-    float: left;
-    width: 33%;
-  }
   .section.activity, .section.conversations, .aside {
     width: 33%;
     float: left;
@@ -316,9 +350,6 @@ a.button.text:link, a.button.text:visited, .button.text {
       {
         font-size:1.1em;
       }
-    }
-    ul {
-      line-height: 1.7em;
     }
   }
   .aside.supplementary {
@@ -378,6 +409,9 @@ a.button.text:link, a.button.text:visited, .button.text {
 .footer {
 }
 
+ul {
+  line-height: 1.7em;
+}
 
 /* headings
 ---------------------------------------------------------------------------- */
