@@ -29,6 +29,12 @@ $orange-color: #b06c00;
 @mixin gutter-margin {
   margin-right: 10px;
 }
+
+@mixin one-column {
+  @include gutter-margin;
+  width: 70px;
+}
+
 /* Animations */
 
 @mixin easing {
@@ -102,7 +108,7 @@ a.button:link, a.button:visited, .button {
   @include text-shadow(rgba(black, .41));
   @include easing;
   &.tertiary {
-    width: 70px;
+    @include one-column;
     height: 16px;
     padding-top: 4px;
     text-transform: inherit;
@@ -210,6 +216,14 @@ a.privileged {
     .join-conversation {
       float: left;
     }
+    ul.event-details {
+      margin-top: 1.5em;
+      margin-left: 160px;
+      li strong {
+        width: 150px;
+        margin-right: .6em;
+      }
+    }
     img {
       @include box-shadow(rgba(0, 0, 0, .75), 1px, 1px, 2px);
       margin-right: 1em;
@@ -226,23 +240,6 @@ a.privileged {
     }
     a.primary.button {
       display: block;
-    }
-    ul {
-      margin-top: 1.5em;
-      margin-left: 160px;
-      li {
-        margin-bottom: 0.5em;
-        strong {
-          display: inline-block;
-          width: 150px;
-          text-align: right;
-          margin-right: .6em;
-        }
-        em {
-          font-size: 1.4em;
-          font-weight: bold;
-        }
-      }
     }
     .conversation-ticker {
       background-color: rgba(255,255,255,0.6);
@@ -369,6 +366,20 @@ a.privileged {
     }
     .guides {
       margin-bottom: 30px;
+    }
+  }
+}
+
+ul.event-details {
+  li {
+    margin-bottom: 0.5em;
+    strong {
+      @include one-column;
+      display: inline-block;
+      text-align: right;
+    }
+    em {
+      font-weight: bold;
     }
   }
 }
