@@ -109,6 +109,11 @@ a.button:link, a.button:visited, .button {
   }
 }
 
+form.delete-button {
+  display: inline;
+  margin-left: 8px;
+}
+
 a.button:hover {
   background-color: $active-blue-color;
   color: rgba(255,255,255,1);

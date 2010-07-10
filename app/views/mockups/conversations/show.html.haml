@@ -16,16 +16,21 @@
       %ul
         %li
           %a(href="#" title="George Nemeth") George Nemeth
+          = delete_button_for(:guide_id => 1)
         %li
           %a(href="#" title="Dan Moulthroup") Dan Moulthroup
+          = delete_button_for(:guide_id => 2)
       %a(href="#" title="Add Guide" class="privileged") Add Guide
     .aside.spotlight
       %strong Spotlight
       %ul
         %li
           %a(href="#" title="Frank Jackson") Frank Jackson
+          = delete_button_for(:spotlight_id => 3)
         %li
           %a(href="#" title="Jane Campbell") Jane Campbell
+          = delete_button_for(:spotlight_id => 4)
         %li
           %a(href="#" title="Michael White") Michael White
+          = delete_button_for(:spotlight_id => 5)
       %a(href="#" title="Add Guide" class="privileged") Add to Spotlight
