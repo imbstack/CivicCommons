@@ -398,13 +398,13 @@ float: left;
       margin-bottom: 15px;
     }
     .article.comment {
+      p {
+        padding-left: 80px;
+      }
       .meta {
         float: left;
       }
       img {
-        float: left;
-      }
-      .content {
         float: left;
       }
     }
