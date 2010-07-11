@@ -1,0 +1,34 @@
+.main.section
+  %h1 Create a New Conversation
+  %form
+    .form-group
+      .form-block
+        %label(for="title")
+          Title:
+        %input(class="textbox" name="title" value="The future of Hill Valley")
+      .form-block
+        %label(for="summary")
+          Summary:
+        %textarea(name="summary")
+          Drama arises after Buford Tannen refuses to give up his arms.
+      .form-block
+        %label(for="image")
+          Image:
+        %input(class="textbox" type="file" name="image")
+    .form-group
+      .form-block
+        %label(for="event")
+          Event:
+        %input(class="textbox" name="event" value="Clocktower Ribbon Cutting Ceremony")
+      .related
+        .form-block
+          %label(for="event-when")
+            When:
+          %input(class="textbox" name="event-when" value="8:04 PM, November 23, 1885")
+        .form-block
+          %label(for="event-where")
+            When:
+          %input(class="textbox" name="event-where" value="Hill Valley Courthouse")
+    .form-block
+      %input(type="submit" value="Create Conversation")
+

@@ -25,7 +25,6 @@ $orange-color: #b06c00;
   float: left;
 }
 
-
 @mixin gutter-margin {
   margin-right: 10px;
 }
@@ -71,6 +70,60 @@ ul {
   @include paragraph-font;
   color: black;
 }
+
+/* forms */
+
+@mixin text-input {
+  color: $grey-color;
+  @include strong-font;
+  @include border-radius(3px);
+  border-color: rgba(black, .07);
+  @include box-shadow(rgba(black, .26), 1px, 1px, 1px);
+  background: white;
+  padding: 7px;
+  font-size: 1.4em;
+}
+
+label
+{
+  @include paragraph-font;
+  color: $grey-color;
+  text-transform:uppercase;
+  font-weight:bold;
+  display:block;
+  width:70px;
+  text-align:right;
+  float:left;
+  padding-top:1.3em;
+  padding-right:10px;
+  font-size:1.1em;
+}
+
+input.textbox, textarea {
+  @include text-input;
+  width:480px;
+}
+
+.form-block
+{
+  margin-bottom:8px;
+}
+
+.form-group
+{
+  margin-bottom:30px;
+}
+
+.form-group .related
+{
+  margin-left:80px;
+}
+
+.form-group .related input.textbox
+{
+  width:400px;
+}
+
 /* links */
 
 a:link, a:visited {
@@ -312,7 +365,6 @@ a.privileged {
     @include two-thirds;
     @include gutter-margin;
     p {
-      margin-top: 18px;
       width: 490px;
       margin-bottom: 35px;
     }
@@ -321,17 +373,7 @@ a.privileged {
       @include gutter-margin;
     }
     textarea {
-      width: 535px;
-      height: 60px;
-      color: $grey-color;
-      @include strong-font;
-      font-size: 1.4em;
-      @include border-radius(3px);
-      border-color: rgba(black, .07);
-      @include box-shadow(rgba(black, .26), 1px);
-      background: white;
-      padding-left: 7px;
-      padding-top: 7px;
+      width: 528px;
     }
     a.button {
       margin-left: 80px;
@@ -439,6 +481,7 @@ h1 {
   @include text-shadow(rgba($dark-blue-color, .25));
   @include heading-font;
   line-height: 1.2em;
+  margin-bottom: 18px;
 }
 
 h2 {
