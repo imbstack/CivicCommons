@@ -376,10 +376,6 @@ float: left;
   .conversation {
     @include two-thirds;
     @include gutter-margin;
-    p {
-      width: 490px;
-      margin-bottom: 35px;
-    }
     select {
       float: left;
       @include gutter-margin;
