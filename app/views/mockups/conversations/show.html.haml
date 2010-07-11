@@ -1,5 +1,5 @@
 .main.section
-  .conversation-head
+  .conversation
     %h1 Mayoral Round-up
     %p
       George and Dan meetup with a panel of Cleveland mayors to discuss potential ways of stimulating the economy throughout the city.
@@ -10,6 +10,33 @@
       Leave a comment...
     %a.button.tertiary(href="#" title="Save to the Stream") Save
     %hr
+    %ul.event-details
+      %li
+        %strong Event:
+        %em Roundtable Q&A 
+      %li
+        %strong When:
+        May 24, 2010, 7:00 PM
+      %li
+        %strong Where:
+        %a.text.button(href="#" title="City Club of Cleveland") City Club of Cleveland
+    %ul
+      %li
+        .article.comment
+          .meta
+            .comment-type Official
+            .rating +0
+          %img(src="/images/nemeth-avatar-small.png" alt="Official Comment from George Nemeth")
+          .content
+            %p
+              %a(href="#" title="George Nemeth's Profile")
+                %strong George Nemeth
+              reported:
+            %p Dan welcomes the audience and introduces the panelists: Frank Jackson, Jane Campbell and Michael White.
+            %p
+              %a.text.button.conversation-action(href="#" title="Leave a comment") Leave a comment
+              %a(href="#" class="privileged" title="Delete this comment") Delete
+
   .aside.supplementary
     .aside.guides
       %strong Guides
@@ -34,31 +61,3 @@
           %a(href="#" title="Michael White") Michael White
           = delete_button_for(:spotlight_id => 5)
       %a(href="#" title="Add Guide" class="privileged") Add to Spotlight
-.section.main.conversation
-  %ul.event-details
-    %li
-      %strong Event:
-      %em Roundtable Q&A 
-    %li
-      %strong When:
-      May 24, 2010, 7:00 PM
-    %li
-      %strong Where:
-      %a.text.button(href="#" title="City Club of Cleveland") City Club of Cleveland
-  %ul
-    %li
-      .article.comment
-        .meta
-          .comment-type Official
-          .rating +0
-        %img(src="/images/nemeth-avatar-small.png" alt="Official Comment from George Nemeth")
-        .content
-          %p
-            %a(href="#" title="George Nemeth's Profile")
-              %strong George Nemeth
-            reported:
-          %p Dan welcomes the audience and introduces the panelists: Frank Jackson, Jane Campbell and Michael White.
-          %p
-            %a.text.button(href="#" title="Leave a comment") Leave a comment
-            %a(href="#" class="privileged" title="Delete this comment") Delete
-

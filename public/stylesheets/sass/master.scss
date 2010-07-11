@@ -209,6 +209,9 @@ a.button.text:link, a.button.text:visited, .button.text {
   @include border-radius(inherit);
   @include box-shadow(black, 0, 0, 0);
   text-decoration: underline;
+  &.conversation-action {
+    color: $blue-color;
+  }
 }
 
 a:link, a:hover, a:visited, a:active {
@@ -251,24 +254,6 @@ a.privileged {
     text-transform: uppercase;
     color: rgba(255,255,255,.41);
     text-indent: .4em;
-  }
-}
-
-
-// Conversation page
-
-.main.section.conversation {
-
-  .article.comment {
-    .meta {
-      float: left;
-    }
-    img {
-      float: left;
-    }
-    .content {
-      float: left;
-    }
   }
 }
 
@@ -388,7 +373,7 @@ width:70px;
 width: 33%;
 float: left;
   }
-  .conversation-head {
+  .conversation {
     @include two-thirds;
     @include gutter-margin;
     p {
@@ -411,6 +396,17 @@ float: left;
 display: block;
 border: 0;
         border-top: solid 1px rgba(black, .19);
+    }
+    .article.comment {
+      .meta {
+        float: left;
+      }
+      img {
+        float: left;
+      }
+      .content {
+        float: left;
+      }
     }
   } 
   .aside.supplementary {
