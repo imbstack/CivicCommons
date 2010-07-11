@@ -329,7 +329,7 @@ a.privileged {
       @include border-radius(3px);
       border-color: rgba(black, .07);
       @include box-shadow(rgba(black, .26), 1px);
-      background: white url(/images/stream-entry-gradient.png) repeat-x;
+      background: white;
       padding-left: 7px;
       padding-top: 7px;
     }
