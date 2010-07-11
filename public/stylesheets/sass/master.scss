@@ -56,6 +56,15 @@ p {
   color: $grey-color;
   font-weight: lighter;
   line-height: 1.4em;
+  a:link.privileged, a:hover.privileged, a:visited.privileged {
+    font-size: .8em;
+  }
+  a:link strong, a:visited strong {
+    font-size: .7em;
+  }
+  a:link.button, a:hover.button, a:visited.button {
+    font-size: .9em;
+  }
 }
 
 strong {
