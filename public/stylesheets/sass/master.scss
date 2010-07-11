@@ -6,6 +6,7 @@ $light-blue-color: #cbdbe4;
 $dark-blue-color: #304958;
 $active-blue-color: #1398ea;
 $grey-color: #666;
+$light-grey-color: #c1c1c1;
 $orange-color: #b06c00;
 
 @mixin heading-font {
@@ -399,10 +400,38 @@ float: left;
     }
     .article.comment {
       p {
-        padding-left: 80px;
+        padding-left: 115px;
+        span.action {
+          font-size: .9em;
+        }
+      }
+      p.content {
+        color: black;
+        font-size: 1.2em;
       }
       .meta {
         float: left;
+        @include one-column;
+        .comment-type {
+          @include paragraph-font;
+          font-size: 1.2em;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: bold;
+          background-color: $light-grey-color;
+          color: white;
+          @include border-radius(3px);
+        }
+        a.rating {
+          display: block;
+          color: $grey-color;
+          font-size: 1.1em;
+          text-align: right;
+          padding-left: 0;
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
       img {
         float: left;
