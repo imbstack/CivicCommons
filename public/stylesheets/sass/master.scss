@@ -285,8 +285,8 @@ float: left;
       margin-top: 1.5em;
       margin-left: 160px;
       li strong {
-width: 150px;
-       margin-right: .6em;
+        width: 150px;
+        margin-right: .6em;
       }
     }
     img {
@@ -434,14 +434,18 @@ content: ":";
 
 ul.event-details {
   li {
-    margin-bottom: 0.5em;
+    font-size: 1.2em;
     strong {
       @include one-column;
+      font-size: 1em;
       display: inline-block;
       text-align: right;
     }
     em {
       font-weight: bold;
+    }
+    a.button {
+      font-size: 1em;
     }
   }
 }
