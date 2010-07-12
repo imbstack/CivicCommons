@@ -22,8 +22,9 @@ $orange-color: #b06c00;
 }
 
 @mixin two-thirds {
-  width: 66%;
+  width: 64%;
   float: left;
+  margin-right:2%;
 }
 
 @mixin gutter-margin {
@@ -401,18 +402,15 @@ background: url(/images/event-icon.png) no-repeat;
     }
   }
   .section.activity {
-width: 33%;
 float: left;
   }
   .main-content {
     @include two-thirds;
-    @include gutter-margin;
     select {
       float: left;
-      @include gutter-margin;
     }
     textarea#comment_text {
-      width: 528px;
+      width: 522px;
     }
     a.button.tertiary {
       margin-left: 80px;
@@ -525,6 +523,9 @@ ul.event-details {
     }
     em {
       font-weight: bold;
+    }
+    a{
+      font-size: 1em;
     }
     a.button {
       font-size: 1em;
