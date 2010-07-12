@@ -140,6 +140,11 @@ input.file
   padding:7px 0;
 }
 
+input.placeholder, textarea.placeholder
+{
+  color:#ccc;
+}
+
 a:link.cancel
 {
   font-weight:normal;
