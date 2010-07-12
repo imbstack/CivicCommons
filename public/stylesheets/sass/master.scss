@@ -129,13 +129,20 @@ input.submit
   @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
   @include text-shadow(rgba(black, .41));
   @include easing;
-  width:160px;
+  width:150px;
+  margin-right:10px;
   margin-left:80px;
 }
 
 input.file
 {
   padding:7px 0;
+}
+
+a:link.cancel
+{
+  font-weight:normal;
+  font-size:1em;
 }
 
 .form-block
