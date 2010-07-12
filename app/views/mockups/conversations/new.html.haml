@@ -29,6 +29,19 @@
           %label(for="event-where")
             When:
           %input(class="textbox" name="event-where" value="Hill Valley Courthouse")
+    .supplementary
+      %strong Issues:
+      %ul
+        %li
+          %a(href="#" title="Finding Plutonium in the year 1885") Finding Plutonium in the year 1885 
+          %a(href="#" title="Remove this Issue")
+            %img(src="/images/trash-can.png")
+        %li
+          %a(href="#" title="Telescope Repair for Amateur Scientists") Telescope Repair for Amateur Scientists
+          %a(href="#" title="Remove this Issue")
+            %img(src="/images/trash-can.png")
+        %li
+          %a(href="#" title="Add An Issue" class="privileged") Add An Issue
     .form-block
       %p
         %input(type="submit" class="submit" value="Create Conversation") or <a href="#" class="cancel">cancel</a>
@@ -39,21 +52,26 @@
     %ul
       %li
         %a(href="#" title="George Nemeth") George Nemeth
-        = delete_button_for(:guide_id => 1)
+        %a(href="#" title="Remove this Guide")
+          %img(src="/images/trash-can.png")
       %li
         %a(href="#" title="Dan Moulthroup") Dan Moulthroup
-        = delete_button_for(:guide_id => 2)
+        %a(href="#" title="Remove this Guide")
+          %img(src="/images/trash-can.png")
     %a(href="#" title="Add Guide" class="privileged") Add Guide
   .aside.spotlight
     %strong Spotlight
     %ul
       %li
         %a(href="#" title="Frank Jackson") Frank Jackson
-        = delete_button_for(:spotlight_id => 3)
+        %a(href="#" title="Remove this Spotlight")
+          %img(src="/images/trash-can.png")
       %li
         %a(href="#" title="Jane Campbell") Jane Campbell
-        = delete_button_for(:spotlight_id => 4)
+        %a(href="#" title="Remove this Spotlight")
+          %img(src="/images/trash-can.png")
       %li
         %a(href="#" title="Michael White") Michael White
-        = delete_button_for(:spotlight_id => 5)
+        %a(href="#" title="Remove this Spotlight")
+          %img(src="/images/trash-can.png")
     %a(href="#" title="Add Guide" class="privileged") Add to Spotlight
