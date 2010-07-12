@@ -1,35 +1,60 @@
 .main.section
-  %h1 Create a New Conversation
-  %form
-    .form-group
-      .form-block
-        %label(for="title")
-          Title:
-        %input(class="textbox" name="title" value="The future of Hill Valley")
-      .form-block
-        %label(for="summary")
-          Summary:
-        %textarea(name="summary")
-          Drama arises after Buford Tannen refuses to give up his arms.
-      .form-block
-        %label(for="image")
-          Image:
-        %input(class="file" type="file" name="image")
-    .form-group
-      .form-block
-        %label(for="event")
-          Event:
-        %input(class="textbox" name="event" value="Clocktower Ribbon Cutting Ceremony")
-      .related
+  .conversation
+    %h1 Create a New Conversation
+    %form
+      .form-group
         .form-block
-          %label(for="event-when")
-            When:
-          %input(class="textbox" name="event-when" value="8:04 PM, November 23, 1885")
+          %label(for="title")
+            Title:
+          %input(class="textbox" name="title" value="The future of Hill Valley")
         .form-block
-          %label(for="event-where")
-            When:
-          %input(class="textbox" name="event-where" value="Hill Valley Courthouse")
-    .form-block
-      %p
-        %input(type="submit" class="submit" value="Create Conversation") or <a href="#" class="cancel">cancel</a>
+          %label(for="summary")
+            Summary:
+          %textarea(name="summary")
+            Drama arises after Buford Tannen refuses to give up his arms.
+        .form-block
+          %label(for="image")
+            Image:
+          %input(class="file" type="file" name="image")
+      .form-group
+        .form-block
+          %label(for="event")
+            Event:
+          %input(class="textbox" name="event" value="Clocktower Ribbon Cutting Ceremony")
+        .related
+          .form-block
+            %label(for="event-when")
+              When:
+            %input(class="textbox" name="event-when" value="8:04 PM, November 23, 1885")
+          .form-block
+            %label(for="event-where")
+              When:
+            %input(class="textbox" name="event-where" value="Hill Valley Courthouse")
+      .form-block
+        %p
+          %input(type="submit" class="submit" value="Create Conversation") or <a href="#" class="cancel">cancel</a>
 
+  .aside.supplementary
+    .aside.guides
+      %strong Guides
+      %ul
+        %li
+          %a(href="#" title="George Nemeth") George Nemeth
+          = delete_button_for(:guide_id => 1)
+        %li
+          %a(href="#" title="Dan Moulthroup") Dan Moulthroup
+          = delete_button_for(:guide_id => 2)
+      %a(href="#" title="Add Guide" class="privileged") Add Guide
+    .aside.spotlight
+      %strong Spotlight
+      %ul
+        %li
+          %a(href="#" title="Frank Jackson") Frank Jackson
+          = delete_button_for(:spotlight_id => 3)
+        %li
+          %a(href="#" title="Jane Campbell") Jane Campbell
+          = delete_button_for(:spotlight_id => 4)
+        %li
+          %a(href="#" title="Michael White") Michael White
+          = delete_button_for(:spotlight_id => 5)
+      %a(href="#" title="Add Guide" class="privileged") Add to Spotlight

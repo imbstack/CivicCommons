@@ -411,7 +411,7 @@ float: left;
       float: left;
       @include gutter-margin;
     }
-    textarea {
+    textarea#comment_text {
       width: 528px;
     }
     a.button.tertiary {
