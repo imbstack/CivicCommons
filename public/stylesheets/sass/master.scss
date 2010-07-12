@@ -114,6 +114,30 @@ input.textbox, textarea {
   width:480px;
 }
 
+input.submit
+{
+  background: url(/images/button-gradient.png) repeat-x 0 50%;
+  background-color: $blue-color;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  border:0;
+  padding:4px;
+  font-weight:bold;
+  @include border-radius(3px);
+  font-family: Helvetica, Arial, sans-serif;
+  @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
+  @include text-shadow(rgba(black, .41));
+  @include easing;
+  width:160px;
+  margin-left:80px;
+}
+
+input.file
+{
+  padding:7px;
+}
+
 .form-block
 {
   margin-bottom:8px;
@@ -156,8 +180,7 @@ a:link, a:visited {
 
 a.button:link, a.button:visited, .button {
   display: inline-block;
-  height: 18px;
-  padding-top: 8px;
+  padding: 4px 0;
   background: url(/images/button-gradient.png) repeat-x 0 50%;
   background-color: $blue-color;
   text-align: center;
@@ -172,21 +195,21 @@ a.button:link, a.button:visited, .button {
   @include easing;
   &.tertiary {
     @include one-column;
-    height: 16px;
     padding-top: 4px;
     text-transform: inherit;
   }
 }
 
-form.delete-button {
-  display: inline;
-  margin-left: 8px;
-}
-
-a.button:hover {
+a.button:hover, input.submit:hover {
+  cursor:pointer;
   background-color: $active-blue-color;
   color: rgba(255,255,255,1);
   text-decoration: none;
+}
+
+form.delete-button {
+  display: inline;
+  margin-left: 8px;
 }
 
 .button.primary {
