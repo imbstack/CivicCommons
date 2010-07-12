@@ -321,6 +321,7 @@ float: left;
     ul.event-details {
       margin-top: 1.5em;
       margin-left: 160px;
+      margin-bottom: 32px;
       li strong {
         width: 150px;
         margin-right: .6em;
@@ -333,6 +334,10 @@ float: left;
     .button {
       margin-top: .8em;
     }
+    .conversation-ticker {
+      padding: 16px;
+      width: 593px;
+    }
     h1 {
       margin-left: 160px;
     }
@@ -343,19 +348,8 @@ float: left;
     a.primary.button {
 display: block;
     }
-    .conversation-ticker {
-      background-color: rgba(255,255,255,0.6);
-width: 593px;
-padding: 16px;
-border: rgba(black, .15) solid 1px;
-        border-left: 0;
-        border-right: 0;
-        margin-top: 32px;
-        strong {
-          @include gutter-margin;
-        }
-    }
   }
+
   .section.activity, .section.conversations, .aside {
 width: 33%;
 float: left;
@@ -473,18 +467,29 @@ float: left;
     }
     .article.issue {
       position: relative;
+      padding-top: 15px;
+      padding-bottom: 15px;
       .date {
+        top: 0;
         position: absolute;
         float: left;
         @include one-column;
         text-align: center;
         height: 100%;
         background: #1379b9 url(/images/issue-date-gradient.png) top left repeat-x;
-        padding-top: 1px;
-        color: white;
-        font-size: 1.4em;
+        font-size: 1em;
         text-transform: uppercase;
         @include text-shadow(black, 1px, 1px, 1px);
+        span.day {
+          display: block;
+          font-size: 1.9em;
+          letter-spacing: 1px;
+        }
+        p {
+          padding-left: 0;
+          margin-top: 15px;
+          color: white;
+        }
       }
       p {
         padding-left: 80px;
@@ -535,6 +540,16 @@ ul.event-details {
     a.button {
       font-size: 1em;
     }
+  }
+}
+
+.conversation-ticker {
+  background-color: rgba(255,255,255,0.6);
+  border: rgba(black, .15) solid 1px;
+  border-left: 0;
+  border-right: 0;
+  strong {
+    @include gutter-margin;
   }
 }
 
