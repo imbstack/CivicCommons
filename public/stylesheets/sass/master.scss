@@ -422,6 +422,7 @@ float: left;
       margin-bottom: 15px;
     }
     .article.comment {
+      margin-bottom: 30px;
       p {
         padding-left: 115px;
         span.action {
@@ -458,6 +459,25 @@ float: left;
       }
       img {
         float: left;
+      }
+    }
+    .article.issue {
+      position: relative;
+      .date {
+        position: absolute;
+        float: left;
+        @include one-column;
+        text-align: center;
+        height: 100%;
+        background: #1379b9 url(/images/issue-date-gradient.png) top left repeat-x;
+        padding-top: 1px;
+        color: white;
+        font-size: 1.4em;
+        text-transform: uppercase;
+        @include text-shadow(black, 1px, 1px, 1px);
+      }
+      p {
+        padding-left: 80px;
       }
     }
   } 
