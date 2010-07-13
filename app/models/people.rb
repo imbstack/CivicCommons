@@ -15,7 +15,7 @@ class People < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name
+  attr_accessible :email, :password, :password_confirmation # :first_name, :last_name
 
   has_many :comments
   has_many :ratings

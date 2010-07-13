@@ -23,6 +23,14 @@
     </div>
     <!-- /.header -->
 
+    <div id="user">
+      <% if person_signed_in? %>
+      Signed in as <%= current_person.email %>. Not you? <%= link_to "Sign out", destroy_person_session_path %>
+      <% else %>
+      <%= link_to "Sign in!", new_person_session_path %> | <%= link_to "Sign up!", new_person_registration_path %>
+      <% end %>
+    </div>
+
     <div id="body" class="section">
 
       <p class="notice"><%= notice %></p>
