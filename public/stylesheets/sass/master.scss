@@ -6,6 +6,8 @@ $light-blue-color: #cbdbe4;
 $dark-blue-color: #304958;
 $active-blue-color: #1398ea;
 $grey-color: #666;
+$light-grey-color: #c1c1c1;
+$orange-color: #b06c00;
 
 @mixin heading-font {
   font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
@@ -17,6 +19,21 @@ $grey-color: #666;
 
 @mixin strong-font {
   font-family: Helvetica, Arial, sans-serif;
+}
+
+@mixin two-thirds {
+  width: 64%;
+  float: left;
+  margin-right:2%;
+}
+
+@mixin gutter-margin {
+  margin-right: 10px;
+}
+
+@mixin one-column {
+  @include gutter-margin;
+  width: 70px;
 }
 
 /* Animations */
@@ -41,6 +58,15 @@ p {
   color: $grey-color;
   font-weight: lighter;
   line-height: 1.4em;
+  a:link.privileged, a:hover.privileged, a:visited.privileged {
+    font-size: .8em;
+  }
+  a:link strong, a:visited strong {
+    font-size: .7em;
+  }
+  a:link.button, a:hover.button, a:visited.button {
+    font-size: .9em;
+  }
 }
 
 strong {
@@ -55,6 +81,96 @@ ul {
   @include paragraph-font;
   color: black;
 }
+
+/* forms */
+
+@mixin text-input {
+  color: $grey-color;
+  @include strong-font;
+  @include border-radius(3px);
+  border-color: rgba(black, .07);
+  @include box-shadow(rgba(black, .26), 1px, 1px, 1px);
+  background: white;
+  padding: 7px;
+  font-size: 1.4em;
+}
+
+label
+{
+  @include paragraph-font;
+  color: $grey-color;
+  text-transform:uppercase;
+  font-weight:bold;
+  display:block;
+  width:70px;
+  text-align:right;
+  float:left;
+  padding-top:1.3em;
+  padding-right:10px;
+  font-size:1.1em;
+}
+
+input.textbox, textarea {
+  @include text-input;
+  width:480px;
+}
+
+input.submit
+{
+  background: url(/images/button-gradient.png) repeat-x 0 50%;
+  background-color: $blue-color;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  border:0;
+  padding:4px;
+  font-weight:bold;
+  @include border-radius(3px);
+  font-family: Helvetica, Arial, sans-serif;
+  @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
+  @include text-shadow(rgba(black, .41));
+  @include easing;
+  width:150px;
+  margin-right:10px;
+  margin-left:80px;
+}
+
+input.file
+{
+  padding:7px 0;
+}
+
+input.placeholder, textarea.placeholder
+{
+  color:#ccc;
+}
+
+a:link.cancel
+{
+  font-weight:normal;
+  font-size:1em;
+}
+
+.form-block
+{
+  margin-bottom:8px;
+}
+
+.form-group
+{
+  margin-bottom:30px;
+}
+
+.form-group .related
+{
+  margin-left:80px;
+}
+
+.form-group .related input.textbox
+{
+  width:400px;
+}
+
 /* links */
 
 a:link, a:visited {
@@ -77,8 +193,7 @@ a:link, a:visited {
 
 a.button:link, a.button:visited, .button {
   display: inline-block;
-  height: 18px;
-  padding-top: 8px;
+  padding: 4px 0;
   background: url(/images/button-gradient.png) repeat-x 0 50%;
   background-color: $blue-color;
   text-align: center;
@@ -91,12 +206,23 @@ a.button:link, a.button:visited, .button {
   @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
   @include text-shadow(rgba(black, .41));
   @include easing;
+  &.tertiary {
+    @include one-column;
+    padding-top: 4px;
+    text-transform: inherit;
+  }
 }
 
-a.button:hover {
+a.button:hover, input.submit:hover {
+  cursor:pointer;
   background-color: $active-blue-color;
   color: rgba(255,255,255,1);
   text-decoration: none;
+}
+
+form.delete-button {
+  display: inline;
+  margin-left: 8px;
 }
 
 .button.primary {
@@ -120,7 +246,21 @@ a.button.text:link, a.button.text:visited, .button.text {
   @include border-radius(inherit);
   @include box-shadow(black, 0, 0, 0);
   text-decoration: underline;
+  &.conversation-action {
+    color: $blue-color;
+  }
 }
+
+a:link, a:hover, a:visited, a:active {
+  @include paragraph-font;
+}
+
+a.privileged {
+  color: $orange-color;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
 /* page structure
 ---------------------------------------------------------------------------- */
 
@@ -156,11 +296,11 @@ a.button.text:link, a.button.text:visited, .button.text {
 
 
 #body.section {
-  background: url(/images/body-gradient.png) repeat-x,
+background: url(/images/body-gradient.png) repeat-x,
               url(/images/body-background.png) repeat;
-  width: 100%;
-  padding-top: 27px;
-  padding-bottom: 27px;
+width: 100%;
+       padding-top: 27px;
+       padding-bottom: 27px;
 }
 
 
@@ -174,10 +314,18 @@ a.button.text:link, a.button.text:visited, .button.text {
 .section.main {
   @include centered-box;
   .feature {
-    width: 66%;
-    float: left;
+    @include two-thirds;
     .join-conversation {
-      float: left;
+float: left;
+    }
+    ul.event-details {
+      margin-top: 1.5em;
+      margin-left: 160px;
+      margin-bottom: 32px;
+      li strong {
+        width: 150px;
+        margin-right: .6em;
+      }
     }
     img {
       @include box-shadow(rgba(0, 0, 0, .75), 1px, 1px, 2px);
@@ -185,6 +333,10 @@ a.button.text:link, a.button.text:visited, .button.text {
     }
     .button {
       margin-top: .8em;
+    }
+    .conversation-ticker {
+      padding: 16px;
+      width: 593px;
     }
     h1 {
       margin-left: 160px;
@@ -194,79 +346,44 @@ a.button.text:link, a.button.text:visited, .button.text {
       margin-left: 160px;
     }
     a.primary.button {
-      display: block;
-    }
-    ul {
-      margin-top: 1.5em;
-      margin-left: 160px;
-      li {
-        margin-bottom: 0.5em;
-        strong {
-          display: inline-block;
-          width: 150px;
-          text-align: right;
-          margin-right: .6em;
-        }
-        em {
-          font-size: 1.4em;
-          font-weight: bold;
-        }
-      }
-    }
-    .conversation-ticker {
-      background-color: rgba(255,255,255,0.6);
-      width: 593px;
-      padding: 16px;
-      border: rgba(black, .15) solid 1px;
-      border-left: 0;
-      border-right: 0;
-      margin-top: 32px;
-      strong {
-        margin-right: 10px;
-      }
+display: block;
     }
   }
-  .aside {
-    float: left;
-    width: 33%;
-  }
+
   .section.activity, .section.conversations, .aside {
-    width: 33%;
-    float: left;
-    .article {
-      margin-top: 2em;
-      img {
-        @include box-shadow(rgba(black, .75));
-        float: left;
-      }
-      .content {
-        padding-left: 80px;
-      }
-      p {
-        font-size: 1.2em;
-        line-height: 1.6em;
-        margin-bottom: 20px;
-        a strong {
-          font-size: .9em;
-        }
-      }
-      a.button:link {
-        margin-right: 10px;
-      }
-      ul {
-        background: url(/images/event-icon.png) no-repeat;
-        padding-left: 40px;
-      }
-      strong
-      {
-        font-size:1.1em;
-      }
-    }
-    ul {
-      line-height: 1.7em;
-    }
+width: 33%;
+float: left;
+       .article {
+         margin-top: 2em;
+         img {
+           @include box-shadow(rgba(black, .75));
+float: left;
+         }
+         .content {
+           padding-left: 80px;
+         }
+         p {
+           font-size: 1.2em;
+           line-height: 1.6em;
+           margin-bottom: 20px;
+           a strong {
+             font-size: .9em;
+           }
+         }
+         a.button:link {
+           @include gutter-margin;
+         }
+         ul {
+background: url(/images/event-icon.png) no-repeat;
+            padding-left: 40px;
+         }
+         strong
+         {
+           font-size:1.1em;
+         }
+       }
   }
-  .aside.supplementary {
+  .supplementary {
     strong {
       display: block;
       float:left;
@@ -284,8 +401,155 @@ a.button.text:link, a.button.text:visited, .button.text {
     }
   }
   .section.activity {
-    width: 33%;
-    float: left;
+float: left;
+  }
+  .main-content {
+    @include two-thirds;
+    select {
+      float: left;
+    }
+    textarea#comment_text {
+      width: 522px;
+    }
+    a.button.tertiary {
+      margin-left: 80px;
+      margin-top: 8px;
+      margin-bottom: 15px;
+    }
+    hr {
+      display: block;
+      border: 0;
+      border-top: solid 1px rgba(black, .19);
+      margin-bottom: 20px;
+    }
+    ul.event-details {
+      margin-bottom: 15px;
+    }
+    .article.comment {
+      margin-bottom: 30px;
+      p {
+        padding-left: 115px;
+        span.action {
+          font-size: .9em;
+        }
+      }
+      p.content {
+        color: black;
+        font-size: 1.2em;
+      }
+      .meta {
+        float: left;
+        @include one-column;
+        .comment-type {
+          @include paragraph-font;
+          font-size: 1.2em;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: bold;
+          background-color: $light-grey-color;
+          color: white;
+          @include border-radius(3px);
+        }
+        a.rating {
+          display: block;
+          color: $grey-color;
+          font-size: 1.1em;
+          text-align: right;
+          padding-left: 0;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      img {
+        float: left;
+      }
+    }
+    .article.issue {
+      position: relative;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      .date {
+        top: 0;
+        position: absolute;
+        float: left;
+        @include one-column;
+        text-align: center;
+        height: 100%;
+        background: #1379b9 url(/images/issue-date-gradient.png) top left repeat-x;
+        font-size: 1em;
+        text-transform: uppercase;
+        @include text-shadow(black, 1px, 1px, 1px);
+        span.day {
+          display: block;
+          font-size: 1.9em;
+          letter-spacing: 1px;
+        }
+        p {
+          padding-left: 0;
+          margin-top: 15px;
+          color: white;
+        }
+      }
+      p {
+        padding-left: 80px;
+      }
+    }
+  } 
+  .supplementary {
+    .aside {
+      width: 100%;
+      float: none;
+      strong {
+        float: none;
+        text-align: left;
+        border-bottom: #cdcdcd thin solid;
+        width: 100%;
+        padding-bottom: 3px;
+        margin-bottom: 15px;
+      }
+      strong:after {
+        content: ":";
+      }
+      ul {
+         padding-left: 0;
+         margin-bottom: 10px;
+      }
+    }
+    .guides {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+ul.event-details {
+  li {
+    font-size: 1.2em;
+    strong {
+      @include one-column;
+      font-size: 1em;
+      display: inline-block;
+      text-align: right;
+    }
+    em {
+      font-weight: bold;
+    }
+    a{
+      font-size: 1em;
+    }
+    a.button {
+      font-size: 1em;
+    }
+  }
+}
+
+.conversation-ticker {
+  background-color: rgba(255,255,255,0.6);
+  border: rgba(black, .15) solid 1px;
+  border-left: 0;
+  border-right: 0;
+  strong {
+    @include gutter-margin;
   }
 }
 
@@ -323,6 +587,9 @@ a.button.text:link, a.button.text:visited, .button.text {
 .footer {
 }
 
+ul {
+  line-height: 1.7em;
+}
 
 /* headings
 ---------------------------------------------------------------------------- */
@@ -341,6 +608,7 @@ h1 {
   @include text-shadow(rgba($dark-blue-color, .25));
   @include heading-font;
   line-height: 1.2em;
+  margin-bottom: 18px;
 }
 
 h2 {

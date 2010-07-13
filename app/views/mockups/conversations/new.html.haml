@@ -1,0 +1,76 @@
+- content_for :main do
+  %h1 Create a New Conversation
+  %form
+    .form-group
+      .form-block
+        %label(for="title")
+          Title:
+        %input(class="textbox" name="title" placeholder="The future of Hill Valley")
+      .form-block
+        %label(for="summary")
+          Summary:
+        %textarea(name="summary" placeholder="Drama arises after Buford Tannen refuses to give up his arms.")
+      .form-block
+        %label(for="image")
+          Image:
+        %input(class="file" type="file" name="image")
+    .form-group
+      .form-block
+        %label(for="event")
+          Event:
+        %input(class="textbox" name="event" placeholder="Clocktower Ribbon Cutting Ceremony")
+      .related
+        .form-block
+          %label(for="event-when")
+            When:
+          %input(class="textbox" name="event-when" placeholder="8:04 PM, November 23, 1885")
+        .form-block
+          %label(for="event-where")
+            When:
+          %input(class="textbox" name="event-where" placeholder="Hill Valley Courthouse")
+    .supplementary
+      %strong Issues:
+      %ul
+        %li
+          %a(href="#" title="Finding Plutonium in the year 1885") Finding Plutonium in the year 1885 
+          %a(href="#" title="Remove this Issue")
+            %img(src="/images/trash-can.png")
+        %li
+          %a(href="#" title="Telescope Repair for Amateur Scientists") Telescope Repair for Amateur Scientists
+          %a(href="#" title="Remove this Issue")
+            %img(src="/images/trash-can.png")
+        %li
+          %a(href="#" title="Add An Issue" class="privileged") Add An Issue
+    .form-block
+      %p
+        %input(type="submit" class="submit" value="Create Conversation") or <a href="#" class="cancel">cancel</a>
+
+-content_for :sidebar do
+  .aside.guides
+    %strong Guides
+    %ul
+      %li
+        %a(href="#" title="George Nemeth") George Nemeth
+        %a(href="#" title="Remove this Guide")
+          %img(src="/images/trash-can.png")
+      %li
+        %a(href="#" title="Dan Moulthroup") Dan Moulthroup
+        %a(href="#" title="Remove this Guide")
+          %img(src="/images/trash-can.png")
+    %a(href="#" title="Add Guide" class="privileged") Add Guide
+  .aside.spotlight
+    %strong Spotlight
+    %ul
+      %li
+        %a(href="#" title="Frank Jackson") Frank Jackson
+        %a(href="#" title="Remove this Spotlight")
+          %img(src="/images/trash-can.png")
+      %li
+        %a(href="#" title="Jane Campbell") Jane Campbell
+        %a(href="#" title="Remove this Spotlight")
+          %img(src="/images/trash-can.png")
+      %li
+        %a(href="#" title="Michael White") Michael White
+        %a(href="#" title="Remove this Spotlight")
+          %img(src="/images/trash-can.png")
+    %a(href="#" title="Add Guide" class="privileged") Add to Spotlight

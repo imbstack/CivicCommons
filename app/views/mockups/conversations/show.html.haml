@@ -1,0 +1,70 @@
+- content_for :main do
+  %h1 Mayoral Round-up
+  %select(name="comment[type]" id="comment_type")
+    %option Official
+    %option Other
+  %textarea(name="comment[text]" id="comment_text" rows="3")
+    Leave a comment...
+  %a.button.tertiary(href="#" title="Save to the Stream") Save
+  %hr
+  %ul.event-details
+    %li
+      %strong Event:
+      %em Roundtable Q&A 
+    %li
+      %strong When:
+      May 24, 2010, 7:00 PM
+    %li
+      %strong Where:
+      %a.text.button(href="#" title="City Club of Cleveland") City Club of Cleveland
+  %ul
+    %li
+      .article.comment
+        .meta
+          .comment-type Official
+          %a.rating(href="#" title="Rate this comment") +0
+        %img(src="/images/nemeth-avatar-small.png" alt="Official Comment from George Nemeth")
+        %p
+          %a(href="#" title="George Nemeth's Profile")
+            %strong George Nemeth
+          %span.action reported:
+        %p.content Dan welcomes the audience and introduces the panelists: |
+                   Frank Jackson, Jane Campbell and Michael White.         |
+        %p
+          %a.text.button.conversation-action(href="#" title="Leave a comment") Leave a comment
+          %a(href="#" class="privileged" title="Delete this comment") Delete
+    %li
+      .article.issue.conversation-ticker
+        .date
+          %p
+            May
+            %span.day 05
+        %p Started discussing a new issue:
+        %p
+          %a(href="#" title="Starting talking about creating new jobs in Cuyahoga County")
+            Creating New Jobs in Cuyahoga County
+
+-content_for :sidebar do
+  .aside.guides
+    %strong Guides
+    %ul
+      %li
+        %a(href="#" title="George Nemeth") George Nemeth
+        = delete_button_for(:guide_id => 1)
+      %li
+        %a(href="#" title="Dan Moulthroup") Dan Moulthroup
+        = delete_button_for(:guide_id => 2)
+    %a(href="#" title="Add Guide" class="privileged") Add Guide
+  .aside.spotlight
+    %strong Spotlight
+    %ul
+      %li
+        %a(href="#" title="Frank Jackson") Frank Jackson
+        = delete_button_for(:spotlight_id => 3)
+      %li
+        %a(href="#" title="Jane Campbell") Jane Campbell
+        = delete_button_for(:spotlight_id => 4)
+      %li
+        %a(href="#" title="Michael White") Michael White
+        = delete_button_for(:spotlight_id => 5)
+    %a(href="#" title="Add Guide" class="privileged") Add to Spotlight

@@ -1,0 +1,37 @@
+!!!
+%html
+  %head
+    %title Civiccommons
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+    = javascript_include_tag 'rails'
+    = javascript_include_tag 'placeholder'
+    = javascript_include_tag 'master'
+    :plain
+      <!--[if gte IE 7]><!-->
+      <link media="screen, projection" rel="stylesheet" href="/stylesheets/screen.css" type="text/css" />
+      <!--<![endif]-->
+    = yield :header
+    = csrf_meta_tag
+  %body
+    #logo.header
+      %a.title{:href => "/", :title => "Civic Commons - Real Logo Coming Soon"} Civic Commons
+      %span.subtitle Real Logo Coming Soon
+    / /.header
+    #body.section
+      <div id="user">
+        <% if person_signed_in? %>
+        Signed in as <%= current_person.email %>. Not you? <%= link_to "Sign out", destroy_person_session_path %>
+        <% else %>
+        <%= link_to "Sign in!", new_person_session_path %> | <%= link_to "Sign up!", new_person_registration_path %>
+        <% end %>
+      </div>
+      %p.notice= notice
+      %p.alert= alert
+      .section
+        = yield
+    #footer.footer
+      .section
+    / /.footer
+    #legal.footer
+      %p The Civic Commons is Copyright 2010 by the Legal Entity.  Content is licensed under License.
+

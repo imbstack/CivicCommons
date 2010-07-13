@@ -1,0 +1,6 @@
+%form(action="#" method="post" class="delete-button")
+  %input(type="hidden" name="_method" value="delete")
+  - form_params.each do |k,v|
+    %input(type="hidden" name="#{k}" value="#{v}")
+  %input(type="image" name="delete_guide" src="/images/trash-can.png")
+
