@@ -18,14 +18,16 @@
       %span.subtitle Real Logo Coming Soon
     / /.header
     #body.section
-      :plain
-        <div id="user">
-          <% if person_signed_in? %>
-          Signed in as <%= current_person.email %>. Not you? <%= link_to "Sign out", destroy_person_session_path %>
-          <% else %>
-          <%= link_to "Sign in!", new_person_session_path %> | <%= link_to "Sign up!", new_person_registration_path %>
-          <% end %>
-        </div>
+      #user
+        - if person_signed_in?
+          - surround "Signed in as", "." do
+            = current_person.email
+          - precede "Not you?" do
+            = link_to "Sign out", destroy_person_session_path
+        - else
+          - succeed " |" do
+            = link_to "Sign in!", new_person_session_path
+          = link_to "Sign up!", new_person_registration_path
       %p.notice= notice
       %p.alert= alert
       .section
