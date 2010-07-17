@@ -18,6 +18,6 @@ Civiccommons::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # DO care if the mailer can't send!
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'mail.criticalresults.com:25' }
 end
