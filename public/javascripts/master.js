@@ -1,3 +1,5 @@
 $(document).ready(function(){
-  $('[placeholder]').placeholder({className: 'placeholder'});
+  if(!Modernizr.input.placeholder) {
+    $('[placeholder]').placeholder({className: 'placeholder'});
+  }
 })
