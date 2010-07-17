@@ -1,10 +1,7 @@
-class RegistrationFormPresenter
-  attr_reader :name, :resource
+require 'presenter/base'
 
-
-  def initialize(resource)
-    @resource = resource
-  end
+class RegistrationFormPresenter < Presenter::Form
+  attr_reader :name
 
 
 end
