@@ -560,6 +560,29 @@ float: left;
   }
 }
 
+
+ol.conversations {
+  li {
+    .article {
+      img {
+        float: left;
+      }
+      p {
+        font-size: 1.2em;
+        padding-left: 76px;
+      }
+      h4 {
+        padding-left: 76px;
+        font-size: 1.2em;
+        margin-bottom: 5px;
+      }
+      .footer {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
 ul.event-details {
   li {
     font-size: 1.2em;
@@ -664,7 +687,7 @@ h3 {
 
 h4 {
   font-size: 1.25em;
-  @include heading-defaults;
+  @include heading-font;
 }
 
 h5 {
