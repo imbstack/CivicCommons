@@ -4,7 +4,7 @@
     %p
       To contribute in the conversations taking place on the Civic Commons, |
       you will need to register for an account.
-  - form_for(form_presenter, :url => registration_path(resource_name), :html => { :class => "register" }) do |f|
+  - form_for(form_presenter, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "register" }) do |f|
     %fieldset.form-group
       .form-block
         = f.label :name, 'Your name:'
