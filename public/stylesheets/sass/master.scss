@@ -452,6 +452,15 @@ float: left;
         margin-left: 0;
         line-height: 1em;
       }
+      a {
+        font-size: 1em;
+        font-weight: normal;
+        &:visited, &:link {
+          strong {
+            font-size: 1em;
+          }
+        }
+      }
       .meta {
         float: left;
         @include one-column;

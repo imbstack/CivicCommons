@@ -85,8 +85,9 @@
           - succeed(":") do
             %a(href="#" title="Frank Jackson's Profile") Frank Jackson
         %p.content
-          %p Mayor Jackson:
-          %p Why did you put a stop to the proposed Apple multimedia lab downtown?
+          - precede "Mayor Jackson:" do
+            %br
+          Why did you put a stop to the proposed Apple multimedia lab downtown?
         %p
           %a.tertiary.button.conversation-action(href="#" title="Answer Joe's Question")
             Answer
