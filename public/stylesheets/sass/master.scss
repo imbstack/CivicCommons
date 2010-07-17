@@ -471,6 +471,13 @@ float: left;
             width: 20px;
             height: 15px;
           }
+          &.question {
+            background: url(/images/comment-question.png) no-repeat right;
+            padding: 0;
+            padding-left: 58px;
+            width: 12px;
+            height: 16px;
+          }
         }
         a.rating {
           display: block;
