@@ -210,6 +210,7 @@ a.button:link, a.button:visited, .button {
     @include one-column;
     padding-top: 4px;
     text-transform: inherit;
+    height: 12px;
   }
 }
 
@@ -410,11 +411,13 @@ float: left;
     }
     textarea#comment_text {
       width: 522px;
+      margin-bottom: 8px;
+    }
+    .header {
+      margin-bottom: 15px;
     }
     a.button.tertiary {
       margin-left: 80px;
-      margin-top: 8px;
-      margin-bottom: 15px;
     }
     hr {
       display: block;
@@ -444,6 +447,10 @@ float: left;
       ol.replies {
         padding-left: 80px;
         margin-top: 30px;
+      }
+      a.button.tertiary, a:link.button.tertiary, a:hover.button.tertiary {
+        margin-left: 0;
+        line-height: 1em;
       }
       .meta {
         float: left;

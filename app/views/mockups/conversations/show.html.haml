@@ -1,11 +1,12 @@
 - content_for :main do
-  %h1 Mayoral Round-up
-  %select(name="comment[type]" id="comment_type")
-    %option Official
-    %option Other
-  %textarea(name="comment[text]" id="comment_text" rows="3")
-    Leave a comment...
-  %a.button.tertiary(href="#" title="Save to the Stream") Save
+  .header
+    %h1 Mayoral Round-up
+    %select(name="comment[type]" id="comment_type")
+      %option Official
+      %option Other
+    %textarea(name="comment[text]" id="comment_text" rows="3")
+      Leave a comment...
+    %a.button.tertiary(href="#" title="Save to the Stream") Save
   %hr
   %ul.event-details
     %li
@@ -72,7 +73,24 @@
               %p
                 %a.text.button.conversation-action(href="#" title="Leave a comment") Reply
                 %a(href="#" class="privileged" title="Delete this comment") Delete
-
+      .article.comment
+        .meta
+          .comment-type.question
+          %a.rating(href="#" title="Rate this comment") +0
+        %img(src="/images/fiorini-avatar-small.png" alt="Question from Joe Fiorini")
+        %p
+          %a(href="#" title="Joe Fiorini's Profile")
+            %strong Joe Fiorini
+          %span.action asked a question to
+          - succeed(":") do
+            %a(href="#" title="Frank Jackson's Profile") Frank Jackson
+        %p.content
+          %p Mayor Jackson:
+          %p Why did you put a stop to the proposed Apple multimedia lab downtown?
+        %p
+          %a.tertiary.button.conversation-action(href="#" title="Answer Joe's Question")
+            Answer
+          %a(href="#" class="privileged" title="Delete this comment") Delete
 -content_for :sidebar do
   .aside.guides
     %strong Guides
