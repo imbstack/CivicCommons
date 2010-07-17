@@ -110,9 +110,27 @@ label
   font-size:1.1em;
 }
 
+form.register {
+  label {
+    width: 150px;
+  }
+  .footer {
+    margin-left: 160px;
+    font-size: 1.4em;
+    .submit {
+      margin-left: 0;
+    }
+  }
+}
+
 input.textbox, textarea {
   @include text-input;
   width:480px;
+}
+
+input.textbox.small {
+  @include text-input;
+  width: 230px;
 }
 
 input.submit

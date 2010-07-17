@@ -4,24 +4,24 @@
     %p
       To contribute in the conversations taking place on the Civic Commons, |
       you will need to register for an account.
-  - form_for(form_presenter, :url => registration_path(resource_name)) do |f|
-    %fieldset
-      .form-field
-        = f.label :name, 'Your name'
-        = f.text_field :name, :placeholder => 'Johnny Appleseed'
-      .form-field
-        = f.label :email, 'Email Address'
-        = f.text_field :email, :placeholder => 'me@johnnyappleseed.com'
-    %fieldset
-      .form-field
-        = f.label :password, 'Password'
-        = f.password_field :password
-      .form-field
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation
+  - form_for(form_presenter, :url => registration_path(resource_name), :html => { :class => "register" }) do |f|
+    %fieldset.form-group
+      .form-block
+        = f.label :name, 'Your name:'
+        = f.text_field :name, :placeholder => 'Johnny Appleseed', :class => "textbox"
+      .form-block
+        = f.label :email, 'Email Address:'
+        = f.text_field :email, :placeholder => 'me@johnnyappleseed.com', :class => "textbox "
+    %fieldset.form-group
+      .form-block
+        = f.label :password, 'Password:'
+        = f.password_field :password, :class => "textbox small"
+      .form-block
+        = f.label :password_confirmation, "Password Again:"
+        = f.password_field :password_confirmation, :class => "textbox small"
     %fieldset.footer
       - succeed 'or' do
-        = f.submit 'Register'
-      %a(href="#" title="Cancel Registration") Cancel
+        = f.submit 'Register', :class => "submit"
+      %a.cancel(href="#" title="Cancel Registration") cancel
 
 
