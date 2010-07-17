@@ -189,6 +189,18 @@ a:link.cancel
   width:400px;
 }
 
+.validation-error {
+  @include paragraph-font;
+  color: #ae1111;
+  font-size: 1.2em;
+}
+
+.field-with-error {
+  input.textbox {
+    background-color: #fff8f8;
+  }
+}
+
 /* links */
 
 a:link, a:visited {
@@ -332,6 +344,9 @@ width: 100%;
 
 .section.main {
   @include centered-box;
+  .header {
+    margin-bottom: 30px;
+  }
   .feature {
     @include two-thirds;
     .join-conversation {
