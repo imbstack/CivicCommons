@@ -1,0 +1,12 @@
+.main.section
+  .header
+    %h1 Register
+    %p
+      To contribute in the conversations taking place on the Civic Commons, |
+      you will need to register for an account.
+  - Rails.logger.debug form_presenter.inspect
+  - form_for(form_presenter, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    .form-field
+      = f.label :name, 'Your name'
+      = f.text_field :name, :placeholder => 'Johnny Appleseed'
+

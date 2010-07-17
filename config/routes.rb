@@ -1,5 +1,7 @@
 Civiccommons::Application.routes.draw do |map|
-  devise_for :people, :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'new' }
+  devise_for :people,
+             :controllers => { :registrations => 'registrations' },
+             :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'new' }
 
   resources :ratings
 
