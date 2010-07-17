@@ -425,8 +425,12 @@ float: left;
     ul.event-details {
       margin-bottom: 15px;
     }
+    ul.conversation-stream {
+      li {
+        margin-bottom: 30px;
+      }
+    }
     .article.comment {
-      margin-bottom: 30px;
       p {
         padding-left: 115px;
         span.action {
@@ -436,6 +440,10 @@ float: left;
       p.content {
         color: black;
         font-size: 1.2em;
+      }
+      ol.replies {
+        padding-left: 80px;
+        margin-top: 30px;
       }
       .meta {
         float: left;
@@ -476,7 +484,6 @@ float: left;
       position: relative;
       padding-top: 15px;
       padding-bottom: 15px;
-      margin-bottom: 30px;
       .date {
         top: 0;
         position: absolute;

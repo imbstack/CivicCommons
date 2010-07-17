@@ -17,7 +17,7 @@
     %li
       %strong Where:
       %a.text.button(href="#" title="City Club of Cleveland") City Club of Cleveland
-  %ul
+  %ul.conversation-stream
     %li
       .article.comment
         .meta
@@ -57,6 +57,21 @@
         %p
           %a.text.button.conversation-action(href="#" title="Leave a comment") Reply
           %a(href="#" class="privileged" title="Delete this comment") Delete
+        %ol.replies
+          %li
+            .article.comment.reply
+              .meta
+                .comment-type.unofficial
+                %a.rating(href="#" title="Rate this comment") +0
+              %img(src="/images/wilson-avatar-small.png" alt="Comment from James Wilson")
+              %p
+                %a(href="#" title="George Nemeth's Profile")
+                  %strong James Wilson
+                %span.action commented:
+              %p.content I can’t believe Frank Jackson showed up to this event wearing a Yankee’s hat.  Seriously?
+              %p
+                %a.text.button.conversation-action(href="#" title="Leave a comment") Reply
+                %a(href="#" class="privileged" title="Delete this comment") Delete
 
 -content_for :sidebar do
   .aside.guides
