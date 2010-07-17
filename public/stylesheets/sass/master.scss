@@ -39,7 +39,7 @@ $orange-color: #b06c00;
 /* Animations */
 
 @mixin easing {
-  -webkit-transition: all 0.2s ease;
+  -webkit-transition: color,background-color 0.2s ease;
 }
 
 /* base styles */
