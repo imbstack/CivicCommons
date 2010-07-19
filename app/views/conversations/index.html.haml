@@ -1,0 +1,48 @@
+- content_for :main do
+  %h1 Conversations
+  %hr
+  %table.conversation-list
+    %tr
+      %th
+        %strong Started
+      %th
+        %strong Main Issue
+      %th
+        %strong Guides
+      %th
+        %strong Summary
+      %th{:colspan => 3}
+        %strong Actions
+    - @conversations.each do |conversation|
+      %tr
+        %td #{conversation.start_time_text}
+        %td #{conversation.issues_text}
+        %td #{conversation.guides_text}
+        %td #{conversation.summary}
+        %td #{link_to 'Show', conversation}
+        %td #{link_to 'Edit', edit_conversation_path(conversation)}
+        %td #{link_to 'Destroy', conversation, :confirm => 'Are you sure?', :method => :delete}
+  %li
+    %strong Event:
+    %em Roundtable Q&A 
+  %li
+    %strong When:
+    May 24, 2010, 7:00 PM
+  %li
+    %strong Where:
+    %a.text.button(href="#" title="City Club of Cleveland") City Club of Cleveland
+  %li
+    #{link_to 'Start a new conversation!', new_conversation_path}
+
+  %br
+  %li
+    .article.issue.conversation-ticker
+      .date
+        %p
+          May
+          %span.day 05
+      %p Started discussing a new issue:
+      %p
+        %a(href="#" title="Starting talking about creating new jobs in Cuyahoga County")
+          Creating New Jobs in Cuyahoga County
+

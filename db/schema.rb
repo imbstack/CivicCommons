@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100702194949) do
+ActiveRecord::Schema.define(:version => 20100719213054) do
 
   create_table "answers", :force => true do |t|
     t.datetime "datetime"
@@ -41,9 +41,23 @@ ActiveRecord::Schema.define(:version => 20100702194949) do
     t.datetime "updated_at"
   end
 
+  create_table "conversations_guides", :id => false, :force => true do |t|
+    t.integer "conversation_id"
+    t.integer "guide_id"
+  end
+
   create_table "conversations_issues", :id => false, :force => true do |t|
     t.integer "conversation_id"
     t.integer "issue_id"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "when"
+    t.string   "where"
+    t.integer  "moderator_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "issues", :force => true do |t|
