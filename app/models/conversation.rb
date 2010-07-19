@@ -9,7 +9,12 @@ class Conversation < ActiveRecord::Base
 
   def issues_text
     if (issues.count > 0)
-      issues.join(", ")
+      r = ""
+      issues.each do |issue|
+        r += ", "
+        r += issue.description
+      end
+      r[2,r.length-2] # lose starting comma-space
     else
       "No issues yet"
     end
@@ -37,7 +42,7 @@ class Conversation < ActiveRecord::Base
    sameyear = (started_at.year == Time.now.year)
    if (diff == 0 && sameyear)
      started_at.strftime("TODAY at %I:%M %p")
-   elseif (diff == -1 && sameyear)
+   elsif (diff == -1 && sameyear)
      started_at.strftime("YESTERDAY at %I:%M %p")
    else
      started_at.strftime("%A, %B %d, %Y at %I:%M %p")
