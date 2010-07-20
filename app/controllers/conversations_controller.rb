@@ -41,6 +41,7 @@ class ConversationsController < ApplicationController
   # POST /conversations.xml
   def create
     @conversation = Conversation.new(params[:conversation])
+    @conversation[:started_at] = Time.now
 
     respond_to do |format|
       if @conversation.save

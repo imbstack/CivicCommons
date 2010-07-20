@@ -4,9 +4,11 @@
   %table.conversation-list
     %tr
       %th
+        %strong Title
+      %th
         %strong Started
       %th
-        %strong Main Issue
+        %strong Issues
       %th
         %strong Guides
       %th
@@ -15,6 +17,7 @@
         %strong Actions
     - @conversations.each do |conversation|
       %tr
+        %td #{conversation.title}
         %td #{conversation.start_time_text}
         %td #{conversation.issues_text}
         %td #{conversation.guides_text}
@@ -22,17 +25,7 @@
         %td #{link_to 'Show', conversation}
         %td #{link_to 'Edit', edit_conversation_path(conversation)}
         %td #{link_to 'Destroy', conversation, :confirm => 'Are you sure?', :method => :delete}
-  %li
-    %strong Event:
-    %em Roundtable Q&A 
-  %li
-    %strong When:
-    May 24, 2010, 7:00 PM
-  %li
-    %strong Where:
-    %a.text.button(href="#" title="City Club of Cleveland") City Club of Cleveland
-  %li
-    #{link_to 'Start a new conversation!', new_conversation_path}
+  #{link_to 'Start a new conversation!', new_conversation_path}
 
   %br
   %li

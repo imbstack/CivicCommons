@@ -6,29 +6,29 @@
       .form-block
         %label(for="title")
           Title:
-        %input(class="textbox" name="title")
+        %input(class="textbox" name="conversation[title]")
       .form-block
         %label(for="summary")
           Summary:
-        %textarea(name="summary")
+        %textarea(name="conversation[summary]")
       .form-block
         %label(for="image")
           Image:
-        %input(class="file" type="file" name="image")
+        %input(class="file" type="file" name="conversation[image]")
     .form-group
       .form-block
         %label(for="event")
           Event:
-        %input(class="textbox" name="event")
+        %input(class="textbox" name="event[title]")
       .related
         .form-block
           %label(for="event-when")
             When:
-          %input(class="textbox" name="event-when" placeholder="8:04 PM, November 23, 1885")
+          %input(class="textbox" name="event[when]" placeholder="8:04 PM, November 23, 1885")
         .form-block
           %label(for="event-where")
             Where:
-          %input(class="textbox" name="event-where")
+          %input(class="textbox" name="event[where]")
     .supplementary
       %strong Issues:
       %ul

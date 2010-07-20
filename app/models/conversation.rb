@@ -1,5 +1,5 @@
 class Conversation < ActiveRecord::Base
-  include ActiveModel::Validations
+#  include ActiveModel::Validations
   has_and_belongs_to_many :issues
   has_many :events
   # has_many :comments # if we later decide to enable comments on Conversations
@@ -7,6 +7,8 @@ class Conversation < ActiveRecord::Base
   has_many :answers
   has_and_belongs_to_many :guides, :class_name => 'People', :join_table => 'conversations_guides', :association_foreign_key => :guide_id
 
+  # Return a comma-and-space-delimited list of the Issues
+  # relevant to this Conversation, e.g., "Jobs, Sports, Religion"
   def issues_text
     if (issues.count > 0)
       r = ""
@@ -32,6 +34,9 @@ class Conversation < ActiveRecord::Base
     end
   end
 
+  #
+  # Represent the "Started At" column in a reader-friendly format.
+  #
   # This is kind of a kludge. It also doesn't properly say
   # "yesterday" when you're talking about New Year's Eve.
   def start_time_text
@@ -50,3 +55,4 @@ class Conversation < ActiveRecord::Base
   end
 
 end
+
