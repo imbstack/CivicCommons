@@ -1,5 +1,6 @@
 - @spotlights = []
 - @allissues = Issue.all(:order => 'description')
+- @chosenissues = [1,3,5]
 - content_for :main do
   %h1 Create a New Conversation
   - form_for :conversation, :url => {:controller => "conversations", :action => "create" } do
@@ -33,20 +34,24 @@
     .supplementary
       %strong Issues:
       %ul
+        - @chosenissues.each do |x|
+          %li
+            - @issuenumber = x
+            - @issuedetail = Issue.find(@issuenumber)
+            %a(href="#{url_for(:controller => 'issues', :action => 'show', :id => @issuenumber)}" title="#{@issuedetail.description}") #{@issuedetail.description}
+            %a(href="#" title="Remove this Issue")
+              %img(src="/images/trash-can.png")
+        - if (@chosenissues.length == 0)
+          %li
+            This Conversation has no issues yet.
         %li
-          %a(href="#" title="Finding Plutonium in the year 1885") Finding Plutonium in the year 1885 
-          %a(href="#" title="Remove this Issue")
-            %img(src="/images/trash-can.png")
-        %li
-          %a(href="#" title="Telescope Repair for Amateur Scientists") Telescope Repair for Amateur Scientists
-          %a(href="#" title="Remove this Issue")
-            %img(src="/images/trash-can.png")
-        %li
-          %a(href='javascript:void();' class='privileged' onclick='$("#addissue").show();')Add an Issue
+          %a(id='addissueprompt' href='javascript:void();' class='privileged' onclick='$("#addissueprompt").hide(); $("#addissue").show();')Add an Issue
           #addissue(style="display:none")
             %select(name="newissue" id="newissue")
               =render :partial => 'issues'
-            %button(onclick='addIssue($("#newissue").value);$("#addissue").hide();') Add Issue
+            -# This is "obtrusive Javascript." Should fix it.
+            %a(href='javascript:void();' class='privileged' onclick='@chosenissues.push($("#newissue").value);$("#addissue").hide();$("#addissueprompt").show();') Confirm adding issue
+            %a(href='javascript:void();' class='privileged' onclick='$("#addissue").hide();$("#addissueprompt").show();') Cancel adding issue
     .form-block
       %p
         %input(type="submit" class="submit" value="Create Conversation") or <a href="#" class="cancel">cancel</a>
