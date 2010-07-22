@@ -17,7 +17,8 @@
         =render :partial => 'issues'
       -# This is "obtrusive Javascript." Should make it unobtrusive.
       -# CONFIRM button
-      %a(href='javascript:void();' class='privileged' onclick='@chosenissues.push($("#newissue").value);$("#addissue").hide();$("#addissueprompt").show();') Confirm adding issue
+      %a(href='javascript:void();' class='privileged' onclick='chooseissue(1)') Confirm adding issue
       -# CANCEL button
       %a(href='javascript:void();' class='privileged' onclick='$("#addissue").hide();$("#addissueprompt").show();') Cancel adding issue
 
+      = link_to_function("Confirm adding issue", 'chooseissue($("#newissue").value)', :class => "privileged")

@@ -26,7 +26,7 @@
         .form-block
           %label(for="event-when")
             When:
-          %input(class="textbox" name="event[when]" placeholder="8:04 PM, November 23, 1885")
+          = datetime_select("post", "event[when]")
         .form-block
           %label(for="event-where")
             Where:
