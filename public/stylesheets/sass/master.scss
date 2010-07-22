@@ -439,18 +439,12 @@ float: left;
   }
   .main-content {
     @include two-thirds;
-    select {
-      float: left;
-    }
     textarea#comment_text {
-      width: 522px;
+      width: 598px;
       margin-bottom: 8px;
     }
     .header {
       margin-bottom: 15px;
-    }
-    a.button.tertiary {
-      margin-left: 80px;
     }
     hr {
       display: block;
