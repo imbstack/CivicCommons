@@ -1,6 +1,6 @@
 - content_for :main do
   .header
-    %h1 The Ed Show July 10, 2010 
+    %h1 The Ed Show Wrapup - July 10, 2010 
     %select(name="comment[type]" id="comment_type")
       %option Comment
       %option Question
@@ -12,13 +12,13 @@
   %ul.event-details
     %li
       %strong Event:
-      %em Roundtable Q&A 
+      %em The Ed Show
     %li
       %strong When:
-      May 24, 2010, 7:00 PM
+      July 10, 2010, 7:00 PM
     %li
       %strong Where:
-      %a.text.button(href="#" title="City Club of Cleveland") City Club of Cleveland
+      %a.text.button(href="#" title="MSNBC") MSNBC TV
   %ul.conversation-stream
     %li
       .article.comment
@@ -28,16 +28,35 @@
         %img(src="/images/nemeth-avatar-small.png" alt="Official Comment from George Nemeth")
         %p
           %a(href="#" title="George Nemeth's Profile")
-            %strong George Nemeth
+            %strong Dan Moulthrop
           %span.action reported:
-        %p.content Dan welcomes the audience and introduces the panelists: |
-                   Frank Jackson, Jane Campbell and Michael White.         |
+        %p.content Chris welcomes everyone to the Ed Show.  Introduces himself as tonights host, in for Ed. Schultz.
         %p
           %a.text.button.conversation-action(href="#" title="Respond to this Post") Respond
           %a(href="#" class="privileged" title="Delete this comment") Delete
+    %li
+      .article.issue.conversation-ticker
+        .date
+          %p
+            Jul
+            %span.day 10
+        %p Started discussing a new issue:
+        %p
+          %a(href="#" title="Starting talking about Labor Department announces new jobless claims up to 472,000")
+            Labor Department announces new jobless claims up to 472,000
 -content_for :sidebar do
   .aside.guides
     %strong Guides
+    %ul
+      %li
+        %a(href="#" title="Dan Moulthrop") Dan Moulthrop
+        = delete_button_for(:guide_id => 13)
+      %li
+        %a(href="#" title="George Nemeth") George Nemeth
+        = delete_button_for(:guide_id => 12)
+    %a(href="#" title="Add Guide" class="privileged") Add Guide
+  .aside.spotlight
+    %strong Spotlight
     %ul
       %li
         %a(href="#" title="Chris Hayes") Chris Hayes
@@ -45,10 +64,6 @@
       %li
         %a(href="#" title="Ed Schultz") Ed Schultz
         = delete_button_for(:guide_id => 2)
-    %a(href="#" title="Add Guide" class="privileged") Add Guide
-  .aside.spotlight
-    %strong Spotlight
-    %ul
       %li
         %a(href="#" title="Sen. Debbie Stabenow") Sen. Debbie Stabenow
         = delete_button_for(:spotlight_id => 3)
