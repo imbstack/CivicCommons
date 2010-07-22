@@ -31,27 +31,8 @@
           %label(for="event-where")
             Where:
           %input(class="textbox" name="event[where]")
-    .supplementary
-      %strong Issues:
-      %ul
-        - @chosenissues.each do |x|
-          %li
-            - @issuenumber = x
-            - @issuedetail = Issue.find(@issuenumber)
-            %a(href="#{url_for(:controller => 'issues', :action => 'show', :id => @issuenumber)}" title="#{@issuedetail.description}") #{@issuedetail.description}
-            %a(href="#" title="Remove this Issue")
-              %img(src="/images/trash-can.png")
-        - if (@chosenissues.length == 0)
-          %li
-            This Conversation has no issues yet.
-        %li
-          %a(id='addissueprompt' href='javascript:void();' class='privileged' onclick='$("#addissueprompt").hide(); $("#addissue").show();')Add an Issue
-          #addissue(style="display:none")
-            %select(name="newissue" id="newissue")
-              =render :partial => 'issues'
-            -# This is "obtrusive Javascript." Should fix it.
-            %a(href='javascript:void();' class='privileged' onclick='@chosenissues.push($("#newissue").value);$("#addissue").hide();$("#addissueprompt").show();') Confirm adding issue
-            %a(href='javascript:void();' class='privileged' onclick='$("#addissue").hide();$("#addissueprompt").show();') Cancel adding issue
+    .supplementary#chosenissues
+      = render :partial => 'chosenissues'
     .form-block
       %p
         %input(type="submit" class="submit" value="Create Conversation") or <a href="#" class="cancel">cancel</a>
