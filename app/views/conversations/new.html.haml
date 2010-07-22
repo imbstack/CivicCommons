@@ -1,4 +1,5 @@
 - @spotlights = []
+- @allissues = Issue.all(:order => 'description')
 - content_for :main do
   %h1 Create a New Conversation
   - form_for :conversation, :url => {:controller => "conversations", :action => "create" } do
@@ -41,7 +42,11 @@
           %a(href="#" title="Remove this Issue")
             %img(src="/images/trash-can.png")
         %li
-          %a(href="#" title="Add An Issue" class="privileged") Add An Issue
+          %a(href='javascript:void();' class='privileged' onclick='$("#addissue").show();')Add an Issue
+          #addissue(style="display:none")
+            %select(name="newissue" id="newissue")
+              =render :partial => 'issues'
+            %button(onclick='addIssue($("#newissue").value);$("#addissue").hide();') Add Issue
     .form-block
       %p
         %input(type="submit" class="submit" value="Create Conversation") or <a href="#" class="cancel">cancel</a>
