@@ -1,6 +1,10 @@
 --- 
-hash: 5a276501f09e5a8fc6f3cde3d55331b2524b6dd0
+hash: 0855c5d6ae0c419d1d3ec9bf6f0a2a9a1c8cc588
 sources: 
+- Git: 
+    git: git://github.com/Papipo/hassle.git
+    uri: git://github.com/Papipo/hassle.git
+    ref: 826f9e020ba45d226ae619808cf6bd11e0678a6b
 - Git: 
     git: git://github.com/densitypop/rails.git
     uri: git://github.com/densitypop/rails.git
@@ -14,14 +18,14 @@ specs:
     version: 1.0.0
 - activesupport: 
     version: 3.0.0.beta4
-    source: 0
+    source: 1
 - builder: 
     version: 2.1.2
 - i18n: 
     version: 0.4.1
 - activemodel: 
     version: 3.0.0.beta4
-    source: 0
+    source: 1
 - erubis: 
     version: 2.6.6
 - rack: 
@@ -34,7 +38,7 @@ specs:
     version: 0.3.22
 - actionpack: 
     version: 3.0.0.beta4
-    source: 0
+    source: 1
 - mime-types: 
     version: "1.16"
 - polyglot: 
@@ -45,15 +49,15 @@ specs:
     version: 2.2.5
 - actionmailer: 
     version: 3.0.0.beta4
-    source: 0
+    source: 1
 - arel: 
     version: 0.4.0
 - activerecord: 
     version: 3.0.0.beta4
-    source: 0
+    source: 1
 - activeresource: 
     version: 3.0.0.beta4
-    source: 0
+    source: 1
 - bcrypt-ruby: 
     version: 2.1.2
 - bundler: 
@@ -70,14 +74,17 @@ specs:
     version: 0.13.8
 - railties: 
     version: 3.0.0.beta4
-    source: 0
+    source: 1
 - rails: 
     version: 3.0.0.beta4
-    source: 0
+    source: 1
 - factory_girl_rails: 
     version: "1.0"
 - haml: 
     version: 3.0.13
+- hassle: 
+    version: 0.0.1
+    source: 0
 - hpricot: 
     version: 0.8.2
 - nokogiri: 
@@ -117,6 +124,10 @@ dependencies:
     version: ">= 0"
     group: 
     - :default
+  hassle: 
+    version: ">= 0"
+    group: 
+    - :production
   rails3-generators: 
     version: ">= 0"
     group: 
