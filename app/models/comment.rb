@@ -1,3 +1,5 @@
+require 'parent_validator'
+
 class Comment < ActiveRecord::Base
   validates_with ParentValidator
   has_many :comments, :as => :commentable
