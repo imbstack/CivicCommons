@@ -14,4 +14,5 @@
         = f.password_field :password, :class => 'textbox small'
     %fieldset.footer
       = f.submit 'Login', :class => 'submit'
-      %a.cancel(href="#" title="Forgot your Password?") Forgot your password?
+      %a.cancel{ :href => new_password_path(resource_name),
+                 :title => "Forgot your Password?" } Forgot your password?
