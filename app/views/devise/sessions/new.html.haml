@@ -1,0 +1,17 @@
+.main.section
+  .header
+    %h1 Login
+    %p
+      - surround "If you don’t have an account, you should ", " first." do
+        = link_to "register", new_person_registration_path
+  - form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %fieldset.form-group
+      .form-block
+        = f.label :email, 'Email:'
+        = f.text_field :email, :placeholder => "me@johnnyappleseed.com", :class => 'textbox small'
+      .form-block
+        = f.label :password, 'Password:'
+        = f.password_field :password, :class => 'textbox small'
+    %fieldset.footer
+      = f.submit 'Login', :class => 'submit'
+      %a.cancel(href="#" title="Forgot your Password?") Forgot your password?

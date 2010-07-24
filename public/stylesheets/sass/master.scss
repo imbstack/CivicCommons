@@ -58,6 +58,10 @@ p {
   color: $grey-color;
   font-weight: lighter;
   line-height: 1.4em;
+  a, a:link, a:hover, a:visited {
+      font-size: 1em;
+      font-weight: normal;
+  }
   a:link.privileged, a:hover.privileged, a:visited.privileged {
     font-size: .8em;
   }
