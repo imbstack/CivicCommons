@@ -58,19 +58,6 @@ p {
   color: $grey-color;
   font-weight: lighter;
   line-height: 1.4em;
-  a, a:link, a:hover, a:visited {
-      font-size: 1em;
-      font-weight: normal;
-  }
-  a:link.privileged, a:hover.privileged, a:visited.privileged {
-    font-size: .8em;
-  }
-  a:link strong, a:visited strong {
-    font-size: .7em;
-  }
-  a:link.button, a:hover.button, a:visited.button {
-    font-size: .9em;
-  }
 }
 
 strong {
@@ -78,7 +65,6 @@ strong {
   text-transform: uppercase;
   font-weight: bold;
   color: $grey-color;
-  font-size: 1.2em;
 }
 
 ul {
@@ -209,7 +195,6 @@ a:link.cancel
 
 a:link, a:visited {
   color: $blue-color;
-  font-size: 1.4em;
   font-weight: bold;
   outline: none;
   text-decoration: none;
@@ -219,7 +204,6 @@ a:link, a:visited {
   strong {
     text-transform: none;
     color: $blue-color;
-    font-size: 1em;
   }
 }
 
@@ -233,7 +217,6 @@ a.button:link, a.button:visited, .button {
   text-align: center;
   color: rgba(255,255,255,0.9);
   text-transform: uppercase;
-  font-size: 1.2em;
   font-weight: light;
   @include border-radius(3px);
   font-family: Helvetica, Arial, sans-serif;
@@ -271,6 +254,7 @@ form.delete-button {
 a.button.text:link, a.button.text:visited, .button.text {
   display: inline;
   background: inherit;
+  font-size: .857142857em;
   @include paragraph-font;
   color: $grey-color;
   text-transform: none;
@@ -292,8 +276,9 @@ a:link, a:hover, a:visited, a:active {
 
 a.privileged {
   color: $orange-color;
+  font-weight: bold;
   text-transform: uppercase;
-  font-size: 1.1em;
+  font-size: 11px;
 }
 
 /* page structure
@@ -364,6 +349,9 @@ float: left;
         width: 150px;
         margin-right: .6em;
       }
+      a, em {
+        font-size: 1.1666667em;
+      }
     }
     img {
       @include box-shadow(rgba(0, 0, 0, .75), 1px, 1px, 2px);
@@ -384,7 +372,8 @@ float: left;
       margin-left: 160px;
     }
     a.primary.button {
-display: block;
+      display: block;
+      font-size: 1.2em;
     }
   }
 
@@ -404,8 +393,8 @@ float: left;
            font-size: 1.2em;
            line-height: 1.6em;
            margin-bottom: 20px;
-           a strong {
-             font-size: .9em;
+           a {
+             font-size: 1.166666667em;
            }
          }
          a.button:link {
@@ -414,16 +403,19 @@ float: left;
          ul {
 background: url(/images/event-icon.png) no-repeat;
             padding-left: 40px;
-         }
-         strong
-         {
-           font-size:1.1em;
+            li.event-meta {
+              font-weight: bold;
+              font-size: 1.2em;
+              color: #666;
+              text-transform: uppercase;
+            }
          }
        }
   }
   .supplementary {
     strong {
       display: block;
+      font-size: 1.2em;
       float:left;
       text-align:right;
       width:70px;
@@ -462,6 +454,7 @@ float: left;
     ul.conversation-stream {
       li {
         margin-bottom: 30px;
+        font-size: 1em;
       }
     }
     .article.comment {
@@ -473,7 +466,6 @@ float: left;
       }
       p.content {
         color: black;
-        font-size: 1.2em;
         margin-bottom: 8px;
       }
       ol.replies {
@@ -485,8 +477,6 @@ float: left;
         line-height: 1em;
       }
       a {
-        font-size: 1em;
-        font-weight: normal;
         &:visited, &:link {
           strong {
             font-size: 1em;
@@ -616,6 +606,13 @@ ol.conversations {
   }
 }
 
+ul {
+  li {
+    font-size: 1.4em;
+  }
+}
+
+
 ul.event-details {
   li {
     font-size: 1.2em;
@@ -642,8 +639,13 @@ ul.event-details {
   border: rgba(black, .15) solid 1px;
   border-left: 0;
   border-right: 0;
+  font-size: 1.4em;
   strong {
     @include gutter-margin;
+    font-size: .85em;
+  }
+  p {
+    font-size: 1em;
   }
 }
 
