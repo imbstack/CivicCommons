@@ -58,7 +58,7 @@ GEM
       activesupport (>= 3.0.0.beta)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
-    devise (1.1.rc2)
+    devise (1.1.0)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
     diff-lcs (1.1.2)
@@ -69,6 +69,7 @@ GEM
       factory_girl (~> 1.3)
       rails (>= 3.0.0.beta4)
     haml (3.0.14)
+    hpricot (0.8.2-java)
     hpricot (0.8.2)
     i18n (0.4.1)
     mail (2.2.5)
@@ -77,6 +78,8 @@ GEM
       treetop (>= 1.4.5)
     mime-types (1.16)
     nokogiri (1.4.2)
+    nokogiri (1.4.2-java)
+      weakling (>= 0.0.3)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.9)
@@ -106,6 +109,7 @@ GEM
     tzinfo (0.3.22)
     warden (0.10.7)
       rack (>= 1.0.0)
+    weakling (0.0.4-java)
     webrat (0.7.2.beta.1)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -116,7 +120,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  devise (= 1.1.rc2)
+  devise (= 1.1)
   factory_girl_rails
   haml
   hassle!
