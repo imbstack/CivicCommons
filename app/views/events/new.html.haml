@@ -1,0 +1,21 @@
+.main.section
+  .header
+    %h1 New Event
+    %p
+      Create a new event happening in your community			
+  - form_for(@event) do |f|
+    %fieldset.form-group
+      .form-block			
+        = f.label :title, 'Event Name'
+        = f.text_field :title, :placeholder => 'Picnic in the Park', :class=>"textbox"
+      .form-block					
+        = f.label :when
+        = f.datetime_select :when
+      .form-block					
+        = f.label :where
+        = f.text_field :where, :placeholder => 'Central Park', :class=>"textbox"
+      .form-block
+        = f.label :moderator_id, "Moderator"
+        = f.text_field :moderator_id, :placeholder=>"1", :class=>"textbox"
+    %fieldset.footer
+      = f.submit 'Save Event', :class => "submit"		
