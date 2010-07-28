@@ -7,6 +7,6 @@ class CreateEventsGuidesJoinTable < ActiveRecord::Migration
   end
 
   def self.down
-      drop table :events_guides
+      drop_table :events_guides
   end
 end

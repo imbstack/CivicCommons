@@ -7,7 +7,9 @@ class AddTitleAndImageToConversation < ActiveRecord::Migration
   end
 
   def self.down
+    change_table :conversations do |t|
       t.remove :title
       t.remove :image
+    end
   end
 end
