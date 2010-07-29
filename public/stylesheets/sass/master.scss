@@ -274,6 +274,7 @@ a.button:link, a.button:visited, .button {
   font-weight: light;
   @include border-radius(3px);
   font-family: Helvetica, Arial, sans-serif;
+  font-size:1.2em;
   @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
   @include text-shadow(rgba(black, .41));
   @include easing;
