@@ -5,12 +5,14 @@ $blue-color: #1179b9;
 $light-blue-color: #cbdbe4;
 $dark-blue-color: #304958;
 $active-blue-color: #1398ea;
+$dark-grey-color: #444;
 $grey-color: #666;
 $light-grey-color: #c1c1c1;
 $orange-color: #b06c00;
 
 @mixin heading-font { font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif; }
 @mixin paragraph-font { font-family: "Helvetica Neue", Arial, sans-serif; }
+@mixin emphasized-font { font-family: Palatino, Georgia, times, serif; }
 @mixin strong-font { font-family: Helvetica, Arial, sans-serif; }
 
 @mixin two-thirds {
@@ -46,23 +48,43 @@ p {
   color: $grey-color;
   font-weight: lighter;
   line-height: 1.4em;
+  margin-bottom:1em;
 }
 
 strong {
   @include strong-font;
-  text-transform: uppercase;
   font-weight: bold;
-  color: $grey-color;
+  color: $dark-grey-color;
 }
 
-ul {
+em {
+  @include emphasized-font;
+  font-size:1.2em;
+  font-style:italic;
+  color: $dark-grey-color;
+}
+
+ul, ol {
   @include paragraph-font;
-  color: black;
+  color: $grey-color;
   line-height: 1.7em;
+  margin-bottom:2em;
+  margin-left:2em;
 }
 
-ul li {
+ul { list-style-type:disc; }
+ol { list-style-type:decimal; }
+
+ul.link-list, ol.link-list 
+{ 
+  list-style:none; 
+  margin-left:0;
+}
+
+ul li, ol li {
   font-size: 1.4em;
+  line-height: 1.4em;
+  margin-bottom:0.5em;
 }
 
 $heading-margin: 25px;
@@ -224,7 +246,6 @@ a:link, a:visited {
     text-decoration: underline;
   }
   strong {
-    text-transform: none;
     color: $blue-color;
   }
 }
@@ -370,6 +391,7 @@ float: left;
       li strong {
         width: 150px;
         margin-right: .6em;
+        text-transform: uppercase;
       }
       a, em {
         font-size: 1.1666667em;
@@ -436,6 +458,7 @@ background: url(/images/event-icon.png) no-repeat;
   }
   .supplementary {
     strong {
+      text-transform: uppercase;
       display: block;
       font-size: 1.2em;
       float:left;
@@ -472,8 +495,12 @@ float: left;
     }
     ul.event-details {
       margin-bottom: 15px;
+      margin-left:0;
+      list-style-type:none;
     }
     ul.conversation-stream {
+      margin-left:0;
+      list-style-type:none;
       li {
         margin-bottom: 30px;
         font-size: 1em;
@@ -493,6 +520,8 @@ float: left;
       ol.replies {
         padding-left: 80px;
         margin-top: 30px;
+        margin-left:0;
+        list-style-type:none;
       }
       a.button.tertiary, a:link.button.tertiary, a:hover.button.tertiary {
         margin-left: 0;
@@ -501,6 +530,7 @@ float: left;
       a {
         &:visited, &:link {
           strong {
+            text-transform: uppercase;
             font-size: 1em;
           }
         }
@@ -583,6 +613,7 @@ float: left;
       width: 100%;
       float: none;
       strong {
+        text-transform: uppercase;
         float: none;
         text-align: left;
         border-bottom: #cdcdcd thin solid;
@@ -606,6 +637,8 @@ float: left;
 
 
 ol.conversations {
+  margin-left:0;
+  list-style-type:none;
   li {
     margin-bottom: 30px;
     .article {
@@ -632,12 +665,15 @@ ul.event-details {
   li {
     font-size: 1.2em;
     strong {
+      text-transform: uppercase;
       @include one-column;
       font-size: 1em;
       display: inline-block;
       text-align: right;
     }
     em {
+      @include strong-font;
+      font-style:normal;
       font-weight: bold;
     }
     a{
@@ -657,6 +693,7 @@ ul.event-details {
   font-size: 1.4em;
   strong {
     @include gutter-margin;
+    text-transform: uppercase;
     font-size: .85em;
   }
   p {

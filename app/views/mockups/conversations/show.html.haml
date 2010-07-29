@@ -274,7 +274,7 @@
 -content_for :sidebar do
   .aside.guides
     %strong Guides
-    %ul
+    %ul.link-list
       %li
         %a(href="#" title="Dan Moulthrop") Dan Moulthrop
         = delete_button_for(:guide_id => 13)
@@ -284,7 +284,7 @@
     %a(href="#" title="Add Guide" class="privileged") Add Guide
   .aside.spotlight
     %strong Spotlight
-    %ul
+    %ul.link-list
       %li
         %a(href="#" title="Chris Hayes") Chris Hayes
         = delete_button_for(:guide_id => 1)
