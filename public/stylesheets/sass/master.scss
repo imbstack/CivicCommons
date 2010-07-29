@@ -680,44 +680,33 @@ ul {
 
 $heading-margin: 25px;
 
-@mixin heading-defaults {
+h1 { font-size:2.8em; }
+h2 { font-size:1.8em; }
+h3 { font-size:1.5em; }
+h4 { font-size:1.25em; }
+h5 { font-size:1em; }
+
+
+h1, h2, h4 { @include heading-font; }
+
+h3, h5{
   font-weight: bold;
   margin-top: $heading-margin;
   margin-bottom: $heading-margin;
 }
 
 h1 {
-  font-size: 2.8em;
   color: $dark-blue-color;
   @include text-shadow(rgba($dark-blue-color, .25));
-  @include heading-font;
   line-height: 1.2em;
   margin-bottom: 18px;
 }
 
 h2 {
-  font-size: 1.8em;
   font-weight: bold;
   color: rgba($dark-blue-color, .68);
-  @include heading-font;
   @include text-shadow(rgba(white, 1));
 }
-
-h3 {
-  font-size: 1.5em;
-  @include heading-defaults;
-}
-
-h4 {
-  font-size: 1.25em;
-  @include heading-font;
-}
-
-h5 {
-  font-size: 1em;
-  @include heading-defaults;
-}
-
 
 /* misc.
 ---------------------------------------------------------------------------- */
