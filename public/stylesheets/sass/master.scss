@@ -65,6 +65,35 @@ ul li {
   font-size: 1.4em;
 }
 
+$heading-margin: 25px;
+
+h1 { font-size:2.8em; }
+h2 { font-size:1.8em; }
+h3 { font-size:1.5em; }
+h4 { font-size:1.25em; }
+h5 { font-size:1em; }
+
+h1, h2, h4 { @include heading-font; }
+
+h3, h5{
+  font-weight: bold;
+  margin-top: $heading-margin;
+  margin-bottom: $heading-margin;
+}
+
+h1 {
+  color: $dark-blue-color;
+  @include text-shadow(rgba($dark-blue-color, .25));
+  line-height: 1.2em;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-weight: bold;
+  color: rgba($dark-blue-color, .68);
+  @include text-shadow(rgba(white, 1));
+}
+
 /* forms */
 
 @mixin text-input {
@@ -669,38 +698,6 @@ ul.event-details {
 .footer {
 }
 
-/* headings
----------------------------------------------------------------------------- */
-
-$heading-margin: 25px;
-
-h1 { font-size:2.8em; }
-h2 { font-size:1.8em; }
-h3 { font-size:1.5em; }
-h4 { font-size:1.25em; }
-h5 { font-size:1em; }
-
-
-h1, h2, h4 { @include heading-font; }
-
-h3, h5{
-  font-weight: bold;
-  margin-top: $heading-margin;
-  margin-bottom: $heading-margin;
-}
-
-h1 {
-  color: $dark-blue-color;
-  @include text-shadow(rgba($dark-blue-color, .25));
-  line-height: 1.2em;
-  margin-bottom: 18px;
-}
-
-h2 {
-  font-weight: bold;
-  color: rgba($dark-blue-color, .68);
-  @include text-shadow(rgba(white, 1));
-}
 
 /* misc.
 ---------------------------------------------------------------------------- */
