@@ -58,6 +58,11 @@ strong {
 ul {
   @include paragraph-font;
   color: black;
+  line-height: 1.7em;
+}
+
+ul li {
+  font-size: 1.4em;
 }
 
 /* forms */
@@ -594,13 +599,6 @@ ol.conversations {
   }
 }
 
-ul {
-  li {
-    font-size: 1.4em;
-  }
-}
-
-
 ul.event-details {
   li {
     font-size: 1.2em;
@@ -669,10 +667,6 @@ ul.event-details {
 }
 
 .footer {
-}
-
-ul {
-  line-height: 1.7em;
 }
 
 /* headings
