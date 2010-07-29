@@ -27,7 +27,7 @@ $orange-color: #b06c00;
 
 @mixin one-column {
   @include gutter-margin;
-  width: 70px;
+  @include one-column;
 }
 
 /* Animations */
@@ -136,7 +136,7 @@ label
   text-transform:uppercase;
   font-weight:bold;
   display:block;
-  width:70px;
+  @include one-column;
   text-align:right;
   float:left;
   padding-top:1.3em;
@@ -475,7 +475,7 @@ background: url(/images/event-icon.png) no-repeat;
       font-size: 1.2em;
       float:left;
       text-align:right;
-      width:70px;
+      @include one-column;
       padding-top:0.3em;
     }
     ul {
