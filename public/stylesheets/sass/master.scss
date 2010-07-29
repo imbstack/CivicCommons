@@ -9,17 +9,9 @@ $grey-color: #666;
 $light-grey-color: #c1c1c1;
 $orange-color: #b06c00;
 
-@mixin heading-font {
-  font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
-}
-
-@mixin paragraph-font {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-}
-
-@mixin strong-font {
-  font-family: Helvetica, Arial, sans-serif;
-}
+@mixin heading-font { font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif; }
+@mixin paragraph-font { font-family: "Helvetica Neue", Arial, sans-serif; }
+@mixin strong-font { font-family: Helvetica, Arial, sans-serif; }
 
 @mixin two-thirds {
   width: 64%;
@@ -37,10 +29,7 @@ $orange-color: #b06c00;
 }
 
 /* Animations */
-
-@mixin easing {
-  -webkit-transition: color,background-color 0.2s ease;
-}
+@mixin easing { -webkit-transition: color,background-color 0.2s ease; }
 
 /* base styles */
 
@@ -50,7 +39,6 @@ body {
   background: url(/images/header-background.png) repeat-x #fff;
   text-align: center;
 }
-
 
 p {
   font-size: 1.4em;
