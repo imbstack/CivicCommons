@@ -5,21 +5,15 @@ $blue-color: #1179b9;
 $light-blue-color: #cbdbe4;
 $dark-blue-color: #304958;
 $active-blue-color: #1398ea;
+$dark-grey-color: #444;
 $grey-color: #666;
 $light-grey-color: #c1c1c1;
 $orange-color: #b06c00;
 
-@mixin heading-font {
-  font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif;
-}
-
-@mixin paragraph-font {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-}
-
-@mixin strong-font {
-  font-family: Helvetica, Arial, sans-serif;
-}
+@mixin heading-font { font-family: "Century Gothic", Futura, Avenir, Tahoma, sans-serif; }
+@mixin paragraph-font { font-family: "Helvetica Neue", Arial, sans-serif; }
+@mixin emphasized-font { font-family: Palatino, Georgia, times, serif; }
+@mixin strong-font { font-family: Helvetica, Arial, sans-serif; }
 
 @mixin two-thirds {
   width: 64%;
@@ -33,14 +27,10 @@ $orange-color: #b06c00;
 
 @mixin one-column {
   @include gutter-margin;
-  width: 70px;
 }
 
 /* Animations */
-
-@mixin easing {
-  -webkit-transition: color,background-color 0.2s ease;
-}
+@mixin easing { -webkit-transition: color,background-color 0.2s ease; }
 
 /* base styles */
 
@@ -51,25 +41,78 @@ body {
   text-align: center;
 }
 
-
 p {
   font-size: 1.4em;
   @include paragraph-font;
   color: $grey-color;
   font-weight: lighter;
   line-height: 1.4em;
+  margin-bottom:1em;
 }
 
 strong {
   @include strong-font;
-  text-transform: uppercase;
   font-weight: bold;
-  color: $grey-color;
+  color: $dark-grey-color;
 }
 
-ul {
+em {
+  @include emphasized-font;
+  font-size:1.2em;
+  font-style:italic;
+  color: $dark-grey-color;
+}
+
+ul, ol {
   @include paragraph-font;
-  color: black;
+  color: $grey-color;
+  line-height: 1.7em;
+  margin-bottom:2em;
+  margin-left:2em;
+}
+
+ul { list-style-type:disc; }
+ol { list-style-type:decimal; }
+
+ul.link-list, ol.link-list 
+{ 
+  font-size:1.2em;
+  list-style:none; 
+  margin-left:0;
+}
+
+ul li, ol li {
+  line-height: 1.4em;
+  margin-bottom:0.5em;
+}
+
+$heading-margin: 25px;
+
+h1 { font-size:2.8em; }
+h2 { font-size:1.8em; }
+h3 { font-size:1.5em; }
+h4 { font-size:1.25em; }
+h5 { font-size:1em; }
+
+h1, h2, h4 { @include heading-font; }
+
+h3, h5{
+  font-weight: bold;
+  margin-top: $heading-margin;
+  margin-bottom: $heading-margin;
+}
+
+h1 {
+  color: $dark-blue-color;
+  @include text-shadow(rgba($dark-blue-color, .25));
+  line-height: 1.2em;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-weight: bold;
+  color: rgba($dark-blue-color, .68);
+  @include text-shadow(rgba(white, 1));
 }
 
 /* forms */
@@ -92,7 +135,7 @@ label
   text-transform:uppercase;
   font-weight:bold;
   display:block;
-  width:70px;
+  @include one-column;
   text-align:right;
   float:left;
   padding-top:1.3em;
@@ -191,8 +234,6 @@ a:link.cancel
   }
 }
 
-/* links */
-
 a:link, a:visited {
   color: $blue-color;
   font-weight: bold;
@@ -202,9 +243,21 @@ a:link, a:visited {
     text-decoration: underline;
   }
   strong {
-    text-transform: none;
     color: $blue-color;
   }
+}
+
+/* grid structure */
+
+.offset-1
+{
+  padding-left:76px;
+  position:relative;
+}
+.offset-1 img.callout
+{
+  position:absolute;
+  left:0;
 }
 
 /* buttons */
@@ -220,6 +273,7 @@ a.button:link, a.button:visited, .button {
   font-weight: light;
   @include border-radius(3px);
   font-family: Helvetica, Arial, sans-serif;
+  font-size:1.2em;
   @include box-shadow(rgba(black, .75), 1px, 1px, 1px);
   @include text-shadow(rgba(black, .41));
   @include easing;
@@ -254,7 +308,7 @@ form.delete-button {
 a.button.text:link, a.button.text:visited, .button.text {
   display: inline;
   background: inherit;
-  font-size: .857142857em;
+  font-size: 0.9em;
   @include paragraph-font;
   color: $grey-color;
   text-transform: none;
@@ -348,6 +402,7 @@ float: left;
       li strong {
         width: 150px;
         margin-right: .6em;
+        text-transform: uppercase;
       }
       a, em {
         font-size: 1.1666667em;
@@ -414,11 +469,12 @@ background: url(/images/event-icon.png) no-repeat;
   }
   .supplementary {
     strong {
+      text-transform: uppercase;
       display: block;
       font-size: 1.2em;
       float:left;
       text-align:right;
-      width:70px;
+      @include one-column;
       padding-top:0.3em;
     }
     ul {
@@ -450,8 +506,12 @@ float: left;
     }
     ul.event-details {
       margin-bottom: 15px;
+      margin-left:0;
+      list-style-type:none;
     }
     ul.conversation-stream {
+      margin-left:0;
+      list-style-type:none;
       li {
         margin-bottom: 30px;
         font-size: 1em;
@@ -471,6 +531,8 @@ float: left;
       ol.replies {
         padding-left: 80px;
         margin-top: 30px;
+        margin-left:0;
+        list-style-type:none;
       }
       a.button.tertiary, a:link.button.tertiary, a:hover.button.tertiary {
         margin-left: 0;
@@ -479,6 +541,7 @@ float: left;
       a {
         &:visited, &:link {
           strong {
+            text-transform: uppercase;
             font-size: 1em;
           }
         }
@@ -561,19 +624,20 @@ float: left;
       width: 100%;
       float: none;
       strong {
+        text-transform: uppercase;
         float: none;
         text-align: left;
         border-bottom: #cdcdcd thin solid;
         width: 100%;
         padding-bottom: 3px;
-        margin-bottom: 15px;
+        margin-bottom: 0.5em;
       }
       strong:after {
         content: ":";
       }
       ul {
          padding-left: 0;
-         margin-bottom: 10px;
+         margin-bottom: 1.5em;
       }
     }
     .guides {
@@ -584,18 +648,12 @@ float: left;
 
 
 ol.conversations {
+  margin-left:0;
+  list-style-type:none;
   li {
     margin-bottom: 30px;
     .article {
-      img {
-        float: left;
-      }
-      p {
-        font-size: 1.2em;
-        padding-left: 76px;
-      }
       h4 {
-        padding-left: 76px;
         font-size: 1.2em;
         margin-bottom: 5px;
       }
@@ -606,23 +664,19 @@ ol.conversations {
   }
 }
 
-ul {
-  li {
-    font-size: 1.4em;
-  }
-}
-
-
 ul.event-details {
   li {
     font-size: 1.2em;
     strong {
+      text-transform: uppercase;
       @include one-column;
       font-size: 1em;
       display: inline-block;
       text-align: right;
     }
     em {
+      @include strong-font;
+      font-style:normal;
       font-weight: bold;
     }
     a{
@@ -642,6 +696,7 @@ ul.event-details {
   font-size: 1.4em;
   strong {
     @include gutter-margin;
+    text-transform: uppercase;
     font-size: .85em;
   }
   p {
@@ -681,53 +736,6 @@ ul.event-details {
 }
 
 .footer {
-}
-
-ul {
-  line-height: 1.7em;
-}
-
-/* headings
----------------------------------------------------------------------------- */
-
-$heading-margin: 25px;
-
-@mixin heading-defaults {
-  font-weight: bold;
-  margin-top: $heading-margin;
-  margin-bottom: $heading-margin;
-}
-
-h1 {
-  font-size: 2.8em;
-  color: $dark-blue-color;
-  @include text-shadow(rgba($dark-blue-color, .25));
-  @include heading-font;
-  line-height: 1.2em;
-  margin-bottom: 18px;
-}
-
-h2 {
-  font-size: 1.8em;
-  font-weight: bold;
-  color: rgba($dark-blue-color, .68);
-  @include heading-font;
-  @include text-shadow(rgba(white, 1));
-}
-
-h3 {
-  font-size: 1.5em;
-  @include heading-defaults;
-}
-
-h4 {
-  font-size: 1.25em;
-  @include heading-font;
-}
-
-h5 {
-  font-size: 1em;
-  @include heading-defaults;
 }
 
 

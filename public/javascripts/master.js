@@ -2,17 +2,20 @@ $(document).ready(function(){
   if(!Modernizr.input.placeholder) {
     $('[placeholder]').placeholder({className: 'placeholder'});
   }
+
+  commentsTab.run();
 })
-alert("Loading chooseissue!")
-function chooseissue(n)
-{
-  alert("hi!")
-#  @chosenissues.push(n)
-#  alert("hi!")
-#  page.replace_html($("div#chosenissues"), :partial => "chosenissues")
-#  alert("hi!")
-#  $("#addissue").hide()
-#  alert("hi!")
-#  $("#addissueprompt").show()
-#  alert("hi!")
-}
+
+var commentsTab = $.sammy(function(){
+
+    this.get("#/question/new", function(){
+      $("#comment_text").hide();
+      $("#file_url").hide();
+      $("#link_url").hide();
+      $("#video_url").hide();
+      $("#question_text").show();
+
+    });
+});
+
+
