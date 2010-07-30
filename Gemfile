@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', :git => 'git://github.com/densitypop/rails.git'
+gem 'rails', "3.0.0.rc"
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
