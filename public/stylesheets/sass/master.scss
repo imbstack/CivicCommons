@@ -27,7 +27,6 @@ $orange-color: #b06c00;
 
 @mixin one-column {
   @include gutter-margin;
-  @include one-column;
 }
 
 /* Animations */
