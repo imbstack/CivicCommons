@@ -12,8 +12,6 @@ class DeviseCreatePeople < ActiveRecord::Migration
       #t.timestamps <--- already there from previous migration
     end
 
-    rename_column :people, :email_address, :email
-
     add_index :people, :email,                :unique => true
     add_index :people, :reset_password_token, :unique => true
     # add_index :people, :confirmation_token,   :unique => true

@@ -3,7 +3,7 @@ class CreatePeople < ActiveRecord::Migration
     create_table :people do |t|
       t.string :first_name
       t.string :last_name
-      t.string :email_address
+      t.string :email
       t.boolean :validated
       t.boolean :admin
 
