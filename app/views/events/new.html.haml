@@ -9,13 +9,19 @@
         = f.label :title, 'Event Name'
         = f.text_field :title, :placeholder => 'Picnic in the Park', :class=>"textbox"
       .form-block					
-        = f.label :when
-        = f.datetime_select :when
+        = f.label :when_date
+        = f.text_field :when, :placeholder=>Time.now.strftime("%m/%d/%Y")
+        = f.time_select :when, {:twelve_hour => true}
       .form-block					
         = f.label :where
         = f.text_field :where, :placeholder => 'Central Park', :class=>"textbox"
       .form-block
         = f.label :moderator_id, "Moderator"
-        = f.text_field :moderator_id, :placeholder=>"1", :class=>"textbox"
+        = f.collection_select :moderator_id, Person.all, :id, :email
     %fieldset.footer
       = f.submit 'Save Event', :class => "submit"		
+    = javascript_include_tag 'jquery-ui-1.8.2.custom.min'
+    = javascript_include_tag 'date'
+    = javascript_include_tag 'new_event'
+    - content_for :header do 
+      <link media="screen, projection" rel="stylesheet" href="/stylesheets/ui-lightness/jquery-ui-1.8.2.custom.css" type="text/css" />
