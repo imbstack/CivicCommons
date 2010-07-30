@@ -1,12 +1,22 @@
 - content_for :main do
   .header
     %h1 The Ed Show Wrapup - July 10, 2010 
-    %select(name="comment[type]" id="comment_type")
-      %option Comment
-      %option Question
-      %option Other
-    %textarea(name="comment[text]" id="comment_text" rows="3")
-      Leave a comment...
+    .tab-strip
+      %a(href="#/comment/new" title="Add Comment") Comment
+      %a(href="#/question/new" title="Ask a Question") Question
+      %a(href="#/file/new" title="Upload a File") Image/File
+      %a(href="#/link/new" title="Post a Link") Link
+      %a(href="#/video/new" title="Post a Video") Video
+    .tab-area
+      %textarea(name="comment[text]" id="comment_text" rows="3" placeholder="Leave a Comment...")
+      #question_text
+        This is a question
+      #file_url
+        This is a file
+      #link_url
+        This is a link
+      #video_url
+        This is a video
     %a.button.tertiary(href="#" title="Save to the Stream") Save
   %hr
   %ul.event-details
